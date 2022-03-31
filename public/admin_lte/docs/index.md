@@ -24,11 +24,11 @@ _**Important Note**: You needed to add separately cdn links for plugins in your 
 _**Important Note**: To install it via npm/Yarn, you need at least Node.js 14 or higher._
 #### Via npm
 ```bash
-npm install admin-lte@^3.2 --save
+npm install admin_lte-lte@^3.2 --save
 ```
 #### Via Yarn
 ```bash
-yarn add admin-lte@^3.2
+yarn add admin_lte-lte@^3.2
 ```
 #### Via Composer
 ```bash
