@@ -34,16 +34,23 @@ class UserController extends Controller
         return view('admin.users.edit', ['user' => $user]);
     }
     public function update(UpdateUserRequest $request , User $user){
-//        dd($request->validated());
         $user = $user->update($request->validated());
         if($user){
             return redirect()->route('users.index')->with('success','User updated successfully');
         }
         return redirect()->back();
     }
+    public function show(User $user){
+        return view('admin.users.show', ['user'=> $user]);
+    }
 
-
-
+    public function destroy(User $user){
+       $status =  $user->delete();
+        if($status){
+            return redirect()->route('users.index')->with('success','User deleted successfully');
+        }
+        return redirect()->back();
+    }
 
     public function indexLogin(){
         if(\auth()->check()){

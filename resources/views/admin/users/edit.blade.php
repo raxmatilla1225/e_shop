@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title','Users-create')
+@section('title','Users-edit')
 @section('content')
     <div class="container">
         <form action="{{route('users.update', ['user' => $user])}}" method="post">

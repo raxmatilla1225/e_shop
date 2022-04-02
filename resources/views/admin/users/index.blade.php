@@ -28,10 +28,10 @@
                     <td>{{$user->email}}</td>
                     <td>
                         <div class="row">
-                            <a class="btn btn-warning">SHOW</a>
+                            <a class="btn btn-warning" href="{{route('users.show', ['user'=> $user])}}">SHOW</a>
                             <a class="btn btn-primary" href="{{route('users.edit', ['user'=> $user])}}">UPDATE</a>
-                            <form action="{{}}" method="post">
-                                @method('POST')
+                            <form action="{{route('users.destroy', ['user'=> $user])}}" method="post">
+                                @method('DELETE')
                                 @csrf
                                 <button class="btn btn-danger">DELETE</button>
                             </form>
