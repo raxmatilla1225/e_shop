@@ -10,6 +10,10 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="#" class="nav-link">Contact</a>
         </li>
+        <li class="nav-item bg-secondary ml-2">
+            <a href="{{route('language',['locale'=> 'en'])}}" class="btn {{ (@session('locale') == 'en') ? 'bg-primary' : ''}}">ENG</a>
+            <a href="{{route('language',['locale'=> 'ru'])}}" class="btn {{ (@session('locale') == 'ru') ? 'bg-primary' : ''}}">RU</a>
+        </li>
     </ul>
 
     <!-- Right navbar links -->

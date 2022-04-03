@@ -107,6 +107,10 @@ return [
     | localized telephone numbers, street address information and more.
     |
     */
+    'available_locales' => [
+        'en' => 'en',
+        'ru' => 'ru',
+    ],
 
     'faker_locale' => 'en_US',
 

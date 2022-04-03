@@ -5,8 +5,8 @@
         <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
+            <th scope="col">{{__('user.name')}}</th>
+            <th scope="col">{{ __('user.email') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -15,7 +15,7 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>
-                <a href="{{ route('users.index')}}" class="btn btn-primary">GO BACK</a>
+                <a href="{{ route('users.index')}}" class="btn btn-primary">{{__('user.go-back')}}</a>
             </td>
         </tr>
 
