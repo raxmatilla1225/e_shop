@@ -26,6 +26,7 @@
           @error('password')
           <div class="alert alert-danger">{{ $message }}</div>
           @enderror
+          <x-a-l-input type="text" name="something" id="something" placeholder="Placeholder..." label="Label..."></x-a-l-input>
           <button type="submit" class="btn btn-primary">{{__('user.submit')}}</button>
       </form>
   </div>
