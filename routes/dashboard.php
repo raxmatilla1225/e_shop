@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\NewsCategoryController;
+use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\AuthorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +23,11 @@ Route::middleware(['adminAuth'])->group(function (){
         return view('admin.dashboard.index');
     })->name('admin.dashboard.index');
     Route::resource('users', UserController::class);
+
+    Route::resource('news', NewsController::class);
+    Route::resource('news_cat', NewsCategoryController::class);
+    Route::resource('authors', AuthorController::class);
+
     Route::get('language/{locale}', function ($locale) {
         app()->setLocale($locale);
         session()->put('locale', $locale);
