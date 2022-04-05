@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\NewsCategoryController;
+use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\AuthorController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +25,11 @@ Route::middleware(['adminAuth'])->group(function (){
         return view('admin.dashboard.index');
     })->name('admin.dashboard.index');
     Route::resource('users', UserController::class);
+
+    Route::resource('news', NewsController::class);
+    Route::resource('news_cat', NewsCategoryController::class);
+    Route::resource('authors', AuthorController::class);
+
     Route::resource('provinces', ProvinceController::class);
     Route::get('language/{locale}', function ($locale) {
         app()->setLocale($locale);
@@ -31,4 +40,8 @@ Route::middleware(['adminAuth'])->group(function (){
 
 Route::get('login', [UserController::class, 'indexLogin'])->name('login.index');
 Route::post('admin-login', [UserController::class, 'adminLogin'])->name('login.admin');
+
+Route::resource('client', ClientController::class);
+
+//Route::get('/table', [ClientController::class, 'index'])->name('client.index');
 

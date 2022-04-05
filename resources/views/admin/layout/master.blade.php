@@ -29,10 +29,10 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-    <!-- Preloader -->
-    <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{ asset('admin_lte/dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
-    </div>
+{{--    <!-- Preloader -->--}}
+{{--    <div class="preloader flex-column justify-content-center align-items-center">--}}
+{{--        <img class="animation__shake" src="{{ asset('admin_lte/dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">--}}
+{{--    </div>--}}
 
     <!-- Navbar -->
     @include('admin.partials.nav')
@@ -44,8 +44,10 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         @yield('content')
+        @yield('client')
     </div>
     <!-- /.content-wrapper -->
+
    @include('admin.partials.footer')
 
     <!-- Control Sidebar -->
