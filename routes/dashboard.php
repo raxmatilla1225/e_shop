@@ -42,6 +42,3 @@ Route::get('login', [UserController::class, 'indexLogin'])->name('login.index');
 Route::post('admin-login', [UserController::class, 'adminLogin'])->name('login.admin');
 
 Route::resource('client', ClientController::class);
-
-//Route::get('/table', [ClientController::class, 'index'])->name('client.index');
-
