@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row float-right">
             <div class="col-md-12 mb-3 mt-2 mr-5">
-                <a href="{{route('users.create')}}" class="btn btn-success">CREATE+</a>
+                <a href="{{route('users.create')}}" class="btn btn-success">{{__('user.create')}}</a>
             </div>
         </div>
         @if (session('success'))
@@ -16,8 +16,8 @@
             <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
+                <th scope="col">{{__('user.name')}}</th>
+                <th scope="col">{{ __('user.email') }}</th>
             </tr>
             </thead>
             <tbody>
@@ -28,12 +28,12 @@
                     <td>{{$user->email}}</td>
                     <td>
                         <div class="row">
-                            <a class="btn btn-warning" href="{{route('users.show', ['user'=> $user])}}">SHOW</a>
-                            <a class="btn btn-primary" href="{{route('users.edit', ['user'=> $user])}}">UPDATE</a>
+                            <a class="btn btn-warning" href="{{route('users.show', ['user'=> $user])}}">{{__('user.show')}}</a>
+                            <a class="btn btn-primary" href="{{route('users.edit', ['user'=> $user])}}">{{__('user.update')}}</a>
                             <form action="{{route('users.destroy', ['user'=> $user])}}" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <button class="btn btn-danger">DELETE</button>
+                                <button class="btn btn-danger">{{__('user.delete')}}</button>
                             </form>
                         </div>
                     </td>

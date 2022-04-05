@@ -46,13 +46,19 @@
                         <li class="nav-item">
                             <a href="{{route('users.index')}}" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Users</p>
+                                <p>{{__('user.users')}}</p>
                             </a>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD
                             <a href="{{route('client.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Clients</p>
+=======
+                            <a href="{{route('provinces.index')}}" class="nav-link active">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('province.provinces')}}</p>
+>>>>>>> origin/main
                             </a>
                         </li>
                         <li class="nav-item">

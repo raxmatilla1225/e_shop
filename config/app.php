@@ -107,6 +107,10 @@ return [
     | localized telephone numbers, street address information and more.
     |
     */
+    'available_locales' => [
+        'en' => 'en',
+        'ru' => 'ru',
+    ],
 
     'faker_locale' => 'en_US',
 
@@ -176,6 +180,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\TelescopeServiceProvider::class,
 
     ],
 
