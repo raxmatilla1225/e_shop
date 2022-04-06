@@ -131,7 +131,7 @@
 
                             <a href="{{route('client.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Clients</p>
+                                <p>{{__('user.clients')}}</p>
                             </a>
 
                             <a href="{{route('provinces.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/provinces*')) active @endif">

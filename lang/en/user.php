@@ -9,5 +9,11 @@ return [
     'delete' => 'Delete',
     'go-back' => 'GO BACK',
     'submit' => 'submit',
-    'password' => 'password'
+    'password' => 'password',
+    'username' => 'Username',
+    'phonenumber' => 'Phone number',
+    'save' => 'Save',
+    'action' => 'Action',
+    'editprofile' => 'Edit profile',
+    'clients' => 'Clients'
 ];

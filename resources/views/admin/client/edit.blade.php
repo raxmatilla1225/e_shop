@@ -4,7 +4,7 @@
 <div class="col-md-10 ml-4 mt-5">
     <div class="card">
         <div class="card-header">
-            <h5 class="title">Edit Profile</h5>
+            <h5 class="title">{{__('user.editprofile')}}</h5>
         </div>
         <div class="card-body">
             <form method="POST" action="{{route('client.update', ['client'=>$client])}}">
@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>{{__('user.name')}}</label>
                             <input type="text" class="form-control" placeholder="" name="name" value="{{$client->name}}">
                         </div>
                     </div>
@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>LastName</label>
+                            <label>{{__('user.username')}}</label>
                             <input type="text" class="form-control" placeholder="" name="username" value="{{$client->username}}">
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Username</label>
+                            <label>{{__('user.phonenumber')}}</label>
                             <input type="text" class="form-control" placeholder="" name="phone_number" value="{{$client->phone_number}}">
                         </div>
                     </div>
