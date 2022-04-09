@@ -24,15 +24,16 @@ class ProvinceSeeder extends Seeder
             ]
         ];
         foreach($data as $key => $value){
-            $vil = new Province();
-            $vil->name=$key;
-            $vil->province_id = null;
-            if($vil->name==$value)
-            {
-             $vil->name=$value;
-             $vil->province_id=1  ;         
+            $region = new Province();
+            $region->name = $key;
+            $region->province_id = null;
+            $region->save();
+            foreach ($value as $reg){
+                $reg1 = new Province();
+                $reg1->name = $reg;
+                $reg1->province_id = $region->id;
+                $reg1->save();
             }
-            $vil->save();
         }
     }
 }
