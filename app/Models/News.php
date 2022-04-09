@@ -20,4 +20,9 @@ class News extends Model
         'meta_keys',
         'meta_description',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(NewsCategory::class);
+    }
 }

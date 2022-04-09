@@ -13,7 +13,7 @@ class UpdateNewsCategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class UpdateNewsCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=> [
+                'unique:news_categories',
+                'required',
+                'min:3',
+                'max:255',
+                'string'
+            ],
         ];
     }
 }

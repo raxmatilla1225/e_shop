@@ -53,79 +53,25 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Authors
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
+                            <a href="{{route('authors.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/authors*')) active @endif">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>{{__('author.authors')}}</p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>View Authors</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Create Authors</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('newsCategory.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/newsCategory*')) active @endif">
                                 <i class="nav-icon fas fa-newspaper"></i>
-
-                                <p>
-                                    News category
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
+                                <p>{{__('new_category.new_category')}}</p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>View News category</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Create News category</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('news.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/news*')) active @endif">
                                 <i class="nav-icon fas fa-newspaper"></i>
-                                <p>
-                                    {{__('new.news')}}
-
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
+                                <p>{{__('new.news')}}</p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{route('news.index')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>View News</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('news.create')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Create News</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
-
 
                         <li class="nav-item">
 

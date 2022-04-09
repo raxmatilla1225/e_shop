@@ -24,7 +24,46 @@ class UpdateNewsRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title'=> [
+                'required',
+                'min:3',
+                'max:255',
+                'string'
+            ],
+            'description'=> [
+                'required',
+                'max:1000',
+                'string'
+            ],
+            'news_category_id'=> [
+                'required',
+            ],
+            'author_id'=> [
+                'required',
+            ],
+            'views_count'=> [
+                'required',
+                'integer'
+            ],
+            'status'=> [
+                'required',
+            ],
+            'meta_keys'=> [
+                'required',
+                'min:3',
+                'max:255',
+                'string'
+            ],
+            'meta_description'=> [
+                'required',
+                'max:1000',
+                'string'
+            ],
+            'image'=> [
+                'required',
+                'max:100',
+                'mimes:jpg,png,jpeg',
+            ],
         ];
     }
 }
