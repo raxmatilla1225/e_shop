@@ -46,7 +46,11 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
+<<<<<<< HEAD
                             <a href="{{route('users.index')}}" class="nav-link ">
+=======
+                            <a href="{{route('users.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/users*')) active @endif">
+>>>>>>> cd5c9dc0c59b636435f58c5de1b4c54814d99b0f
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>{{__('user.users')}}</p>
                             </a>
@@ -54,8 +58,7 @@
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Authors
                                     <i class="right fas fa-angle-left"></i>
@@ -133,8 +136,13 @@
                             <a href="{{route('client.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Clients</p>
+                            </a>
 
+<<<<<<< HEAD
                             <a href="{{route('provinces.index')}}" class="nav-link ">
+=======
+                            <a href="{{route('provinces.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/provinces*')) active @endif">
+>>>>>>> cd5c9dc0c59b636435f58c5de1b4c54814d99b0f
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>{{__('province.provinces')}}</p>
                             </a>
