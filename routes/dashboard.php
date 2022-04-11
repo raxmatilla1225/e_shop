@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\NewsCategoryController;
@@ -29,6 +30,8 @@ Route::middleware(['adminAuth'])->group(function (){
     Route::resource('news', NewsController::class);
     Route::resource('news_cat', NewsCategoryController::class);
     Route::resource('authors', AuthorController::class);
+
+    Route::resource('categories', CategoryController::class);
 
     Route::resource('provinces', ProvinceController::class);
     Route::get('language/{locale}', function ($locale) {
