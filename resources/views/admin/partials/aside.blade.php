@@ -55,7 +55,7 @@
                         <li class="nav-item">
                             <a href="{{route('warehouse.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/warehouse*')) active @endif">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Warehouse</p>
+                                <p>{{__('warehouse.warehouse')}}</p>
                             </a>
                         </li>
                         <li class="nav-item">

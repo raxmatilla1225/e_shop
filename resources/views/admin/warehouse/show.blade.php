@@ -6,7 +6,7 @@
         <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Name</th>
+            <th scope="col">{{__('warehouse.name')}}</th>
         </tr>
         </thead>
         <tbody>
@@ -14,7 +14,7 @@
             <th scope="row">{{$warehouse->id}}</th>
             <td>{{$warehouse->name}}</td>
             <td>
-                <a href="{{route('warehouse.index')}}" class="btn btn-primary">Back</a>
+                <a href="{{route('warehouse.index')}}" class="btn btn-primary">{{__('warehouse.back')}}</a>
             </td>
         </tr>
         </tbody>
