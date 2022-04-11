@@ -9,5 +9,6 @@ return [
     'delete' => 'Удалить',
     'go-back' => 'Назад',
     'submit' => 'Нажать',
-    'password' => 'Пароль'
+    'password' => 'Пароль',
+    'user' => 'Пользователь'
 ];
