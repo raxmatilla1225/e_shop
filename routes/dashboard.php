@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\NewsCategoryController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\AuthorController;
+use App\Http\Controllers\Admin\WarehouseController;
 use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +32,9 @@ Route::middleware(['adminAuth'])->group(callback: function (){
     Route::resource('news_cat', NewsCategoryController::class);
     Route::resource('authors', AuthorController::class);
 
-    Route::resource('warehouse', \App\Http\Controllers\Admin\WarehouseController::class);
+    Route::resource('warehouse',WarehouseController::class);
+
+    Route::resource('categories', CategoryController::class);
 
     Route::resource('provinces', ProvinceController::class);
     Route::get('language/{locale}', function ($locale) {
