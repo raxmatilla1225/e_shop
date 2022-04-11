@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::middleware(['adminAuth'])->group(function (){
+Route::middleware(['adminAuth'])->group(callback: function (){
     Route::get('/', function () {
         return view('admin.dashboard.index');
     })->name('admin.dashboard.index');
@@ -29,6 +29,8 @@ Route::middleware(['adminAuth'])->group(function (){
     Route::resource('news', NewsController::class);
     Route::resource('news_cat', NewsCategoryController::class);
     Route::resource('authors', AuthorController::class);
+
+    Route::resource('warehouse', \App\Http\Controllers\Admin\WarehouseController::class);
 
     Route::resource('provinces', ProvinceController::class);
     Route::get('language/{locale}', function ($locale) {
