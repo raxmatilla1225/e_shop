@@ -32,8 +32,9 @@ Route::middleware(['adminAuth'])->group(function (){
 
     Route::resource('provinces', ProvinceController::class);
     Route::get('language/{locale}', function ($locale) {
-        app()->setLocale($locale);
-        session()->put('locale', $locale);
+      if(in_array($locale, config('app.available_locales'))){
+          session()->put('locale', $locale);
+      }
         return redirect()->back();
     })->name('language');
 });
