@@ -16,4 +16,6 @@ return [
     'action' => 'Action',
     'editprofile' => 'Edit profile',
     'clients' => 'Clients'
+    'password' => 'password',
+    'user' => "User"
 ];

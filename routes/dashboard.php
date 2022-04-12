@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\NewsCategoryController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\AuthorController;
+use App\Http\Controllers\Admin\WarehouseController;
 use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::middleware(['adminAuth'])->group(function (){
+Route::middleware(['adminAuth'])->group(callback: function (){
     Route::get('/', function () {
         return view('admin.dashboard.index');
     })->name('admin.dashboard.index');
@@ -30,10 +32,15 @@ Route::middleware(['adminAuth'])->group(function (){
     Route::resource('news_cat', NewsCategoryController::class);
     Route::resource('authors', AuthorController::class);
 
+    Route::resource('warehouse',WarehouseController::class);
+
+    Route::resource('categories', CategoryController::class);
+
     Route::resource('provinces', ProvinceController::class);
     Route::get('language/{locale}', function ($locale) {
-        app()->setLocale($locale);
-        session()->put('locale', $locale);
+      if(in_array($locale, config('app.available_locales'))){
+          session()->put('locale', $locale);
+      }
         return redirect()->back();
     })->name('language');
 });
