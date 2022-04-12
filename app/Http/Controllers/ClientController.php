@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreClientRequest;
+use App\Http\Requests\UpdateClientRequest;
 
 class ClientController extends Controller
 {
@@ -34,7 +36,7 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(StoreClientRequest $request)
     {
         $client = new Client();
         $client->name = $request->get('name');
@@ -42,8 +44,6 @@ class ClientController extends Controller
         $client->phone_number = $request->get('phone_number');
         $client->save();
         return redirect()->route('client.index');
-//        Client::create($request->only(['name', 'username', 'phone_number', 'basket']));
-//        return redirect()->route('client.index');
     }
 
     /**
@@ -75,7 +75,7 @@ class ClientController extends Controller
      * @param  Client $client
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Client $client)
+    public function update(UpdateClientRequest $request, Client $client)
     {
         $client->update($request->only(['name', 'username', 'phone_number']));
         return redirect()->route('client.index');

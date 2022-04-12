@@ -15,7 +15,6 @@ return [
     'save' => 'Save',
     'action' => 'Action',
     'editprofile' => 'Edit profile',
-    'clients' => 'Clients'
-    'password' => 'password',
+    'clients' => 'Clients',
     'user' => "User"
 ];

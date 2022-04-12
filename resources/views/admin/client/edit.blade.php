@@ -18,6 +18,9 @@
                         </div>
                     </div>
                 </div>
+                @error('name')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -26,6 +29,9 @@
                         </div>
                     </div>
                 </div>
+                @error('username')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -34,6 +40,9 @@
                         </div>
                     </div>
                 </div>
+                @error('phone_number')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
