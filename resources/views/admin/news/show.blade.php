@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title', 'New-show')
+@section('title', 'News-show')
 @section('content')
 
 

@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title','News-create')
+@section('title','News-edit')
 @section('content')
     <div class="container">
 
@@ -43,27 +43,27 @@
 
                 <div class="form-group col-md-5">
                     <label for="news_c">{{__('new.category')}}</label>
-                    <select id="news_c" name="category" class="form-control select2" style="width: 100%;">
+                    <select id="news_c" name="news_category_id" class="form-control select2" style="width: 100%;">
                         <option value="{{$news->news_category_id}}">Select category</option>
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
 
-                    @error('category')
+                    @error('news_category_id')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="form-group col-md-5">
                     <label for="author">{{__('new.author')}}</label>
-                    <select id="author" name="author" class="form-control select2" style="width: 100%;">
+                    <select id="author" name="author_id" class="form-control select2" style="width: 100%;">
                         <option value="{{$news->author_id}}">Select author</option>
                         @foreach($authors as $author)
                             <option value="{{ $author->id }}">{{ $author->name }}</option>
                         @endforeach
                     </select>
-                    @error('author')
+                    @error('author_id')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
@@ -77,8 +77,8 @@
                 </div>
                 <div class="form-group col-md-3">
                     <label for="view_count">{{__('new.view_count')}}</label>
-                    <input value="{{$news->views_count}}" type="number" min="0" id="view_count" class="form-control" name="view_count">
-                    @error('description')
+                    <input value="{{$news->views_count}}" type="number" min="0" id="view_count" class="form-control" name="views_count">
+                    @error('views_count')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>

@@ -43,7 +43,7 @@
 
                 <div class="form-group col-md-5">
                     <label for="news_c">{{__('new.category')}}</label>
-                    <select id="news_c" name="category" class="form-control select2" style="width: 100%;">
+                    <select id="news_c" name="news_category_id" class="form-control select2" style="width: 100%;">
                         <option value=" ">Select category</option>
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -57,7 +57,7 @@
 
                 <div class="form-group col-md-5">
                     <label for="author">{{__('new.author')}}</label>
-                    <select id="author" name="author" class="form-control select2" style="width: 100%;">
+                    <select id="author" name="author_id" class="form-control select2" style="width: 100%;">
                         <option value=" ">Select author</option>
                         @foreach($authors as $author)
                             <option value="{{ $author->id }}">{{ $author->name }}</option>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="form-group col-md-3">
                     <label for="view_count">{{__('new.view_count')}}</label>
-                    <input type="number" min="0" id="view_count" class="form-control" name="view_count">
+                    <input type="number" min="0" id="views_count" class="form-control" name="view_count">
                     @error('description')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -93,17 +93,12 @@
                         <div class="input-group-append">
                             <span class="input-group-text">Upload</span>
                         </div>
-                        @error('image')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
                     </div>
+                    @error('image')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
-        {{--            <div class="form-group with-border icheck-primary d-inline">--}}
-        {{--                <label for="checkboxPrimary2">Status</label>--}}
-        {{--                <input type="checkbox" id="checkboxPrimary2">--}}
-        {{--            </div>--}}
-        <!-- /.card-body -->
 
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
