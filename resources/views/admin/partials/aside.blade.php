@@ -58,6 +58,13 @@
                                 <p>{{__('warehouse.warehouse')}}</p>
                             </a>
                         </li>
+                            <a href="{{route('categories.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/categories*')) active @endif">
+
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('category.categories')}}</p>
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
