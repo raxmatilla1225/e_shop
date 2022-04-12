@@ -55,6 +55,12 @@ class ALInput extends Component
      */
     public string $class;
 
+    /**
+     * The alert type.
+     *
+     * @var string
+     */
+    public string $value;
 
 
 
@@ -63,7 +69,7 @@ class ALInput extends Component
      *
      * @return void
      */
-    public function __construct($type, $name, $placeholder = false, $id = false, $label = false, $class = false)
+    public function __construct($type, $name, $placeholder = false, $id = false, $label = false, $class = false , $value = false)
     {
 
         $this->type = $type;
@@ -72,6 +78,7 @@ class ALInput extends Component
         $this->id = $id;
         $this->label = $label;
         $this->class = $class;
+        $this->value = $value;
     }
 
     /**
