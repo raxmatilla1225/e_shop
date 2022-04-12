@@ -47,8 +47,22 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('users.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/users*')) active @endif">
+
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>{{__('user.users')}}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('warehouse.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/warehouse*')) active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('warehouse.warehouse')}}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('categories.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/categories*')) active @endif">
+
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('category.categories')}}</p>
                             </a>
                         </li>
 
