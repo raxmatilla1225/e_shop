@@ -25,6 +25,7 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'title_uz' => [
+                'nullable',
                 'string',
                 'required',
                 'max:255'
@@ -36,10 +37,10 @@ class StoreCategoryRequest extends FormRequest
                 'required'
             ],
             'title_en' => [
+                'nullable',
                 'string',
-                'max:255',
-                'nullable'
-            ] ,
+                'max:255'
+            ],
             'description_uz' => [
                 'string',
                 'required',
@@ -52,25 +53,26 @@ class StoreCategoryRequest extends FormRequest
                 'required'
             ],
             'description_en' => [
+                'nullable',
                 'string',
                 'max:255',
-                'nullable'
             ],
             'status' => [
-                'nullable'
+                'nullable',
+                'boolean'
             ],
             'image' => [
                 'nullable',
                 'mimes:jpg,png,jpeg,gif,svg',
             ],
             'icon' => [
-                'string',
-                'max:255',
                 'nullable',
+                'string',
+                'max:255'
             ],
             'parent_id' => [
-             'nullable',
-                'numeric'] ,
+                'nullable',
+                'numeric'],
             'order' => [
                 'nullable',
                 'numeric'
