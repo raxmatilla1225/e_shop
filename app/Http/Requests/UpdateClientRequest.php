@@ -38,7 +38,7 @@ class UpdateClientRequest extends FormRequest
             ],
             'phone_number' => [
                 'required',
-                'digits_between:9,12',
+                'digits_between:9,12    ',
                 'numeric'
             ]
         ];
