@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row float-right">
             <div class="col-md-12 mb-3 mt-2 mr-5">
-                <a href="{{route('authors.create')}}" class="btn btn-success">{{__('author.create')}}</a>
+                <a href="{{route('authors.create')}}" class="btn btn-success">{{__('actions.create', ['model' => __('author.author')])}} +</a>
             </div>
         </div>
         @if (session('success'))

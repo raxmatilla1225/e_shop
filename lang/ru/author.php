@@ -9,5 +9,6 @@ return [
     'go-back' => 'Назад',
     'submit' => 'Нажать',
     'password' => 'Пароль',
-    'actions' => 'Действия'
+    'actions' => 'Действия',
+    'author' => 'Автор',
 ];

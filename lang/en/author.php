@@ -9,5 +9,6 @@ return [
     'go-back' => 'GO BACK',
     'submit' => 'Submit',
     'password' => 'Password',
-    'actions' => 'Actions'
+    'actions' => 'Actions',
+    'author' => 'Author'
 ];
