@@ -38,8 +38,8 @@ class StoreClientRequest extends FormRequest
             ],
             'phone_number' => [
                 'required',
-                'min:9',
-                'integer'
+                'digits_between:9,12',
+                'numeric'
             ]
         ];
     }

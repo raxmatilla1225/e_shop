@@ -16,5 +16,6 @@ return [
     'action' => 'Action',
     'editprofile' => 'Edit profile',
     'clients' => 'Clients',
-    'user' => "User"
+    'user' => "User",
+    'type' => "Type"
 ];

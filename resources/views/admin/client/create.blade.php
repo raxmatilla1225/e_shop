@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('client')
+@section('content')
     <div class="container">
         <form action="{{route('client.store')}}" method="post">
             @method('POST')
@@ -26,5 +26,6 @@
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <button type="submit" class="btn btn-primary">{{__('user.save')}}</button>
+        </form>
     </div>
 @endsection

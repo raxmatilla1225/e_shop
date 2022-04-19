@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('client')
+@section('content')
 
 <div class="col-md-10 ml-4 mt-5">
     <div class="card">

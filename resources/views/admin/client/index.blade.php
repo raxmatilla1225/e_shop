@@ -1,18 +1,12 @@
 @extends('admin.layout.master')
 @section('title','Clients')
-@section('client')
-
+@section('content')
     <div class="container">
         <div class="row float-right">
             <div class="col-md-12 mb-3 mt-2 mr-5">
                 <a href="{{route('client.create')}}" class="btn btn-success">{{__('user.create')}}</a>
             </div>
         </div>
-{{--        @if (session('success'))--}}
-{{--            <div class="alert alert-success">--}}
-{{--                {{ session('success') }}--}}
-{{--            </div>--}}
-{{--        @endif--}}
         <table class="table">
             <thead>
             <tr>

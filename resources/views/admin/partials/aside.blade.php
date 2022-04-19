@@ -89,7 +89,7 @@
 
                         <li class="nav-item">
 
-                            <a href="{{route('client.index')}}" class="nav-link">
+                            <a href="{{route('client.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/client*')) active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>{{__('user.clients')}}</p>
                             </a>
@@ -114,6 +114,32 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                            Props & PropTypes
+                            <i class="fas fa-angle-left right"></i>
+                            <span class="badge badge-info right">6</span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('property.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Properties</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('propertytype.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>PropertyTypes</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
