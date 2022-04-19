@@ -58,11 +58,19 @@
                                 <p>{{__('warehouse.warehouse')}}</p>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a href="{{route('categories.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/categories*')) active @endif">
 
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>{{__('category.categories')}}</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{route('products.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/products*')) active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('product.products')}}</p>
                             </a>
                         </li>
 

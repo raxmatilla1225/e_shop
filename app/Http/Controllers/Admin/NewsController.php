@@ -45,25 +45,30 @@ class NewsController extends Controller
 
     public function store(StoreNewsRequest $request)
     {
-        $model = new News();
-        $model->title = $request->get('title');
-        $model->description = $request->get('description');
-        $model->news_category_id = $request->get('news_category_id');
-        $model->author_id = $request->get('author_id');
-        $model->views_count = $request->get('views_count');
-        $model->status = $request->get('status');
-        $model->meta_keys = $request->get('meta_keys');
-        $model->meta_description = $request->get('meta_description');
+//        dd($request->validated());
+        if ($request->validated()){
+            $model = new News();
+            $model->title = $request->get('title');
+            $model->description = $request->get('description');
+            $model->news_category_id = $request->get('news_category_id');
+            $model->author_id = $request->get('author_id');
+            $model->views_count = $request->get('views_count');
+            $model->status = $request->get('status');
+            $model->meta_keys = $request->get('meta_keys');
+            $model->meta_description = $request->get('meta_description');
 
-        if ($image = $request->file('image')) {
-            $imageDestinationPath = 'uploads/admin/news';
-            $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($imageDestinationPath, $postImage);
-            $model->image_url = $postImage;
-        }
-        if ($model->save()) {
-            return redirect()->route('news.index')->with('success', 'News created successfully');
-        }
+            if ($image = $request->file('image')) {
+                $imageDestinationPath = 'uploads/admin/news';
+                $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($imageDestinationPath, $postImage);
+                $model->image_url = $postImage;
+            }
+            if ($model->save()) {
+                return redirect()->route('news.index')->with('success', 'News created successfully');
+            }
+        };
+
+
         return redirect()->back();
     }
 
@@ -100,9 +105,8 @@ class NewsController extends Controller
      */
     public function update(UpdateNewsRequest $request, News $news)
     {
-//        dd($request->all());
+//        dd($request->validated());
 
-        if ($request->validated()){
             $news->title = $request->get('title');
             $news->description = $request->get('description');
             $news->news_category_id = $request->get('news_category_id');
@@ -121,7 +125,7 @@ class NewsController extends Controller
             if($news){
                 return redirect()->route('news.index')->with('success','News updated successfully');
             }
-        }
+
 
         return redirect()->back();
 

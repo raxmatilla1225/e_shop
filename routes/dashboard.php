@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\NewsCategoryController;
@@ -27,6 +28,8 @@ Route::middleware(['adminAuth'])->group(callback: function (){
         return view('admin.dashboard.index');
     })->name('admin.dashboard.index');
     Route::resource('users', UserController::class);
+
+    Route::resource('products', ProductController::class);
 
     Route::resource('news', NewsController::class);
     Route::resource('newsCategory', NewsCategoryController::class);
