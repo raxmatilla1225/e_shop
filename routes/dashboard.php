@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\AuthorController;
 use App\Http\Controllers\Admin\WarehouseController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\Admin\StatusesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,12 @@ Route::middleware(['adminAuth'])->group(callback: function (){
     Route::resource('authors', AuthorController::class);
 
     Route::resource('warehouse',WarehouseController::class);
+    Route::resource('status', StatusesController::class);
+
+    Route::get('status/clients', function ()
+    {
+        return view('admin.stat.clients');
+    };
 
     Route::resource('categories', CategoryController::class);
 
