@@ -26,7 +26,6 @@ class UpdateNewsRequest extends FormRequest
         return [
             'title'=> [
                 'required',
-                'min:3',
                 'max:255',
                 'string'
             ],
@@ -61,7 +60,7 @@ class UpdateNewsRequest extends FormRequest
             ],
             'image'=> [
                 'required',
-                'max:100',
+                'max:20000',
                 'mimes:jpg,png,jpeg',
             ],
         ];

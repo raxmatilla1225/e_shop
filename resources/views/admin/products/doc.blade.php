@@ -1,0 +1,194 @@
+
+<form action="{{route('categories.store')}}" method="post" enctype="multipart/form-data">
+    @method('POST')
+    @csrf
+    <div class="mb-3">
+        <x-a-l-input type="text" name="name_ru" id="name_ru" label="Name ru"></x-a-l-input>
+    </div>
+    <div class="mb-3">
+        <x-a-l-input type="text" name="name_en" id="name_en" label="Name en"></x-a-l-input>
+    </div>
+    <div class="mb-3">
+        <x-a-l-input type="text" name="name_uz" id="name_uz" label="Name uz"></x-a-l-input>
+    </div>
+    {{----------------------------------------}}
+    <div class="mb-3">
+        <x-a-l-input type="text" name="short_desc_ru" id="short_desc_ru"
+                     label="Short desc ru"></x-a-l-input>
+    </div>
+    <div class="mb-3">
+        <x-a-l-input type="text" name="description_en" id="description_en"
+                     label="Description en"></x-a-l-input>
+    </div>
+    <div class="mb-3">
+        <x-a-l-input type="text" name="description_ru" id="description_ru"
+                     label="Description ru"></x-a-l-input>
+    </div>
+    {{----------------------------------------}}
+
+    <div class="mb-3">
+        <x-a-l-input type="text" name="icon" id="icon" label="Icon"></x-a-l-input>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Parent</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01" name="parent_id">
+            <option value="0">Null</option>
+            @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category->title_ru}}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Order , After which ...</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01" name="order">
+            <option value="0">Null</option>
+            @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category->title_ru}}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Upload</span>
+        </div>
+        <div class="custom-file">
+            <x-a-l-input type="file" name="image" id="inputGroupFile01"
+                         class="custom-file-input"></x-a-l-input>
+            <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Status</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01" name="status">
+            <option value="1">TRUE</option>
+            <option value="0">FALSE</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+<form action="{{route('products.store')}}" method="post" enctype="multipart/form-data">
+    @method('POST')
+    @csrf
+    <div class="card-body row">
+
+        <div class="mb-3">
+            <x-a-l-input placeholder="Enter {{__('product.name_ru')}}" type="text" name="name_ru" id="name_ru" label="{{__('product.name_ru')}}"></x-a-l-input>
+        </div>
+        <div class="mb-3">
+            <x-a-l-input type="text" name="name_en" id="name_en" label="Name en"></x-a-l-input>
+        </div>
+        <div class="mb-3">
+            <x-a-l-input type="text" name="name_uz" id="name_uz" label="Name uz"></x-a-l-input>
+        </div>
+
+    </div>
+
+    <div class="card-body row">
+        <div class="form-group col-md-5">
+            <label for="title">{{__('new.title')}}</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="News title">
+            @error('title')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+            <br>
+
+            <label for="desc">{{__('new.description')}}</label>
+            <textarea id="desc" class="form-control" name="description" rows="3"
+                      placeholder="Description ..."></textarea>
+            @error('description')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="form-group col-md-5">
+            <label for="meta_keys">{{__('new.meta_keys')}}</label>
+            <input type="text" class="form-control" id="meta_keys" name="meta_keys"
+                   placeholder="Meta keys">
+            @error('meta_keys')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+            <br>
+
+            <label for="meta_description">{{__('new.meta_description')}}</label>
+            <textarea id="meta_description" class="form-control" name="meta_description" rows="3"
+                      placeholder="Meta description ..."></textarea>
+            @error('meta_description')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="form-group col-md-5">
+            <label for="news_c">{{__('new.category')}}</label>
+            <select id="news_c" name="news_category_id" class="form-control select2"
+                    style="width: 100%;">
+                <option value=" ">Select category</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+
+            @error('category')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="form-group col-md-5">
+            <label for="author">{{__('new.author')}}</label>
+            <select id="author" name="author_id" class="form-control select2" style="width: 100%;">
+                <option value=" ">Select author</option>
+                @foreach($authors as $author)
+                    <option value="{{ $author->id }}">{{ $author->name }}</option>
+                @endforeach
+            </select>
+            @error('author')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="status">{{__('new.status')}}</label>
+            <input type="text" class="form-control" id="status" name="status">
+            @error('status')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="form-group col-md-3">
+            <label for="view_count">{{__('new.view_count')}}</label>
+            <input type="number" min="0" id="views_count" class="form-control" name="view_count">
+            @error('description')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="exampleInputFile">{{__('new.image')}}</label>
+            <div class="input-group">
+                <div class="custom-file">
+                    <input type="file" name="image" class="custom-file-input" id="image">
+                    <label class="custom-file-label" for="image">Choose file</label>
+                </div>
+                <div class="input-group-append">
+                    <span class="input-group-text">Upload</span>
+                </div>
+            </div>
+            @error('image')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>

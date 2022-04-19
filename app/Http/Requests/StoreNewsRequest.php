@@ -26,14 +26,13 @@ class StoreNewsRequest extends FormRequest
         return [
             'title'=> [
                 'required',
-                'min:10',
                 'max:255',
                 'string'
             ],
             'description'=> [
                 'required',
                 'max:1000',
-                'text'
+                'string'
             ],
             'news_category_id'=> [
                 'required',
@@ -56,11 +55,11 @@ class StoreNewsRequest extends FormRequest
             'meta_description'=> [
                 'required',
                 'max:1000',
-                'text'
+                'string'
             ],
             'image'=> [
                 'required',
-                'max:15',
+                'max:20000',
                 'mimes:jpg,png,jpeg',
             ],
         ];
