@@ -48,9 +48,9 @@ class NewsController extends Controller
         $model = new News();
         $model->title = $request->get('title');
         $model->description = $request->get('description');
-        $model->news_category_id = $request->get('category');
-        $model->author_id = $request->get('author');
-        $model->views_count = $request->get('view_count');
+        $model->news_category_id = $request->get('news_category_id');
+        $model->author_id = $request->get('author_id');
+        $model->views_count = $request->get('views_count');
         $model->status = $request->get('status');
         $model->meta_keys = $request->get('meta_keys');
         $model->meta_description = $request->get('meta_description');
@@ -100,10 +100,29 @@ class NewsController extends Controller
      */
     public function update(UpdateNewsRequest $request, News $news)
     {
-        $news = $news->update($request->all());
-        if($news){
-            return redirect()->route('news.index')->with('success','News updated successfully');
+//        dd($request->all());
+
+        if ($request->validated()){
+            $news->title = $request->get('title');
+            $news->description = $request->get('description');
+            $news->news_category_id = $request->get('news_category_id');
+            $news->author_id = $request->get('author_id');
+            $news->views_count = $request->get('views_count');
+            $news->status = $request->get('status');
+            $news->meta_keys = $request->get('meta_keys');
+            $news->meta_description = $request->get('meta_description');
+            if ($image = $request->file('image')) {
+                $imageDestinationPath = 'uploads/admin/news';
+                $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($imageDestinationPath, $postImage);
+                $news->image_url = $postImage;
+            }
+            $news = $news->update();
+            if($news){
+                return redirect()->route('news.index')->with('success','News updated successfully');
+            }
         }
+
         return redirect()->back();
 
     }

@@ -30,7 +30,7 @@ Route::middleware(['adminAuth'])->group(callback: function (){
     Route::resource('users', UserController::class);
 
     Route::resource('news', NewsController::class);
-    Route::resource('news_cat', NewsCategoryController::class);
+    Route::resource('newsCategory', NewsCategoryController::class);
     Route::resource('authors', AuthorController::class);
 
     Route::resource('warehouse',WarehouseController::class);

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row float-right">
             <div class="col-md-12 mb-3 mt-2 mr-5">
-                                <a href="{{route('news.create')}}" class="btn btn-success">{{__('new.create')}}</a>
+                <a href="{{route('news.create')}}" class="btn btn-success">{{__('new.create')}}</a>
             </div>
         </div>
         @if (session('success'))
@@ -28,11 +28,12 @@
             <tbody>
             @foreach($news_s as $news)
                 <tr>
-                    <th scope="row">{{$loop->index +1}}</th>
+                    <th scope="row">{{$news->id}}</th>
                     <td>{{$news->title}}</td>
                     <td>{{$news->description}}</td>
                     <td>{{$news->news_category_id}}</td>
-                    <td>{{$news->image_url}}</td>
+                    <td><img alt="news_image" src="{{asset("uploads/admin/news/".$news->image_url) }}" width="65px">
+                    </td>
                     <td>{{$news->author_id}}</td>
                     <td>{{$news->status}}</td>
                     <td>
