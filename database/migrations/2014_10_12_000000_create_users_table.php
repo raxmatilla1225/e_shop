@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('statuses_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('image');
+            $table->string('phone');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PersonalController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\NewsCategoryController;
@@ -50,6 +51,8 @@ Route::middleware(['adminAuth'])->group(callback: function (){
       }
         return redirect()->back();
     })->name('language');
+
+    Route::get('personal', [PersonalController::class, 'index'])->name('personal');
 });
 
 Route::get('login', [UserController::class, 'indexLogin'])->name('login.index');

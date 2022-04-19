@@ -22,6 +22,8 @@ class UserFactory extends Factory
             'email' => 'user@gmail.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'image' => 'pqPrUIDQYJogi6ns4LAUrteCojPqrswckldySgJp.jpg',
+            'phone' => '998-913-99-90',
             'remember_token' => Str::random(10),
         ];
     }

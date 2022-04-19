@@ -8,6 +8,8 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+
 
 class UserController extends Controller
 {
@@ -19,11 +21,13 @@ class UserController extends Controller
         return view('admin.users.create');
     }
     public function store(StoreUserRequest $request){
-
+        $path = $request->file('image')->store('users');
         $model = new User();
         $model->name = $request->get('name');
         $model->email = $request->get('email');
         $model->password = password_hash($request->get('password'), PASSWORD_DEFAULT);
+        $model->image = $path;
+        $model->phone = $request->get('phone');
         if($model->save()){
             return redirect()->route('users.index')->with('success','User created successfully');
         }
@@ -34,8 +38,14 @@ class UserController extends Controller
         return view('admin.users.edit', ['user' => $user]);
     }
     public function update(UpdateUserRequest $request , User $user){
-        $user = $user->update($request->validated());
-        if($user){
+        File::delete('storage/'.$user->image);
+        $path = $request->file('image')->store('users');
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->password = password_hash($request->get('password'), PASSWORD_DEFAULT);
+        $user->image = $path;
+        $user->phone = $request->get('phone');
+        if($user->update()){
             return redirect()->route('users.index')->with('success','User updated successfully');
         }
         return redirect()->back();
