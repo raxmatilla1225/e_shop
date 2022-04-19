@@ -19,6 +19,26 @@
                                         <b style="font-size: 20px; !important;">{{$propertytype->properties}}</b>
                                     </div>
                                 </div>
+                                <div>
+                                    <h1>Related properties</h1>
+                                    <table class="table">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                        </tr>
+                                        @foreach($propertytype->child_properties as $prop)
+                                            <tr>
+
+                                                <td>
+                                                    {{$prop->id}}
+                                                </td>
+                                                <td>
+                                                    {{$prop->name}}
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </table>
+                                </div>
                             </div>
                             <br>
                         </div>

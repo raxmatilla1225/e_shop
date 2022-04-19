@@ -52,7 +52,7 @@ class PropertyTypeController extends Controller
      */
     public function show(PropertyType $propertytype)
     {
-        return view('admin.propertytype.show', ['propertytype' => $propertytype]);
+        return view('admin.propertytype.show', ['propertytype' => $propertytype->load('child_properties')]);
     }
 
     /**

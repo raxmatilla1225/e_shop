@@ -55,3 +55,4 @@ Route::resource('client', ClientController::class);
 
 Route::resource('property', PropertyController::class);
 Route::resource('propertytype', PropertyTypeController::class);
+

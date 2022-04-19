@@ -16,9 +16,8 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $property = Property::all();
-        $prop = PropertyType::all();
-        return view('admin.property.index', ['property' => $property, 'prop' => $prop]);
+        $property = Property::with('property_type')->paginate();
+        return view('admin.property.index', ['property' => $property]);
 
     }
 

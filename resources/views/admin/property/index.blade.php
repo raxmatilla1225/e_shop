@@ -21,7 +21,7 @@
                     <th scope="row">{{$property->id}}</th>
                     <th scope="row">{{$property->name}}</th>
                     <th scope="row">
-
+                        {{ $property->property_type->properties }}
                     </th>
                     <td>
                         <div class="row">
