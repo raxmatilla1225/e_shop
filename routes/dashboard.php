@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PropertyController;
+use App\Http\Controllers\Admin\PropertyPropertytypeController;
+use App\Http\Controllers\Admin\PropertyTypeController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\NewsCategoryController;
@@ -49,3 +52,6 @@ Route::get('login', [UserController::class, 'indexLogin'])->name('login.index');
 Route::post('admin-login', [UserController::class, 'adminLogin'])->name('login.admin');
 
 Route::resource('client', ClientController::class);
+
+Route::resource('property', PropertyController::class);
+Route::resource('propertytype', PropertyTypeController::class);

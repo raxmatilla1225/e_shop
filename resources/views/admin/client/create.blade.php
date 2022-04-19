@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('client')
+@section('content')
     <div class="container">
         <form action="{{route('client.store')}}" method="post">
             @method('POST')
@@ -22,10 +22,10 @@
                 <label for="exampleInputPassword1" class="form-label" >Phone Number</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" name="phone_number">
             </div>
-            @error('number')
+            @error('phone_number')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">{{__('user.save')}}</button>
         </form>
     </div>
 @endsection

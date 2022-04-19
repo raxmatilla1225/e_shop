@@ -1,7 +1,7 @@
 <?php
 return [
     'users' => 'Users',
-    'name' => 'Name',
+ 'name' => 'Name',
     'email' => 'Email',
     'create' => 'Create',
     'show' => 'Show',
@@ -10,5 +10,12 @@ return [
     'go-back' => 'GO BACK',
     'submit' => 'submit',
     'password' => 'password',
-    'user' => "User"
+    'username' => 'Username',
+    'phonenumber' => 'Phone number',
+    'save' => 'Save',
+    'action' => 'Action',
+    'editprofile' => 'Edit profile',
+    'clients' => 'Clients',
+    'user' => "User",
+    'type' => "Type"
 ];
