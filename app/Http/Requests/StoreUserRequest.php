@@ -24,9 +24,11 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
+            'image' => 'required|mimes:jpg,png,jpeg,gif,svg',
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required'
+            'password' => 'required',
+            'phone' => 'required'
         ];
     }
 }

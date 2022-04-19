@@ -10,5 +10,7 @@ return [
     'go-back' => 'GO BACK',
     'submit' => 'submit',
     'password' => 'password',
-    'user' => "User"
+    'user' => "User",
+    'phone' => 'Phone',
+    'image' => 'Image'
 ];
