@@ -2,7 +2,7 @@
 @section('title','Users-edit')
 @section('content')
     <div class="container">
-        <form action="{{route('users.update', ['user' => $user])}}" method="post">
+        <form action="{{route('users.update', ['user' => $user])}}" method="post" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="mb-3">
@@ -19,7 +19,21 @@
             @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
-
+            <div class="mb-3">
+                <label for="phone" class="form-label">{{__('user.phone')}}</label>
+                <input type="text" class="form-control"  name="phone" value="{{$user->phone}}">
+            </div>
+            @error('phone')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="file" name="image" placeholder="Choose image" id="image" value="{{asset('storage/'.$user->image)}}">
+                    @error('image')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary">{{__('user.submit')}}</button>
         </form>
     </div>

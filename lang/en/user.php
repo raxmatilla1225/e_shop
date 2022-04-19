@@ -1,7 +1,7 @@
 <?php
 return [
     'users' => 'Users',
- 'name' => 'Name',
+    'name' => 'Name',
     'email' => 'Email',
     'create' => 'Create',
     'show' => 'Show',
@@ -17,5 +17,7 @@ return [
     'editprofile' => 'Edit profile',
     'clients' => 'Clients',
     'user' => "User",
-    'type' => "Type"
+    'type' => "Type",
+    'phone' => 'Phone',
+    'image' => 'Image'
 ];

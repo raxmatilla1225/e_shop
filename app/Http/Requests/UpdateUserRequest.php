@@ -24,6 +24,8 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
+            'image' => 'required|mimes:jpg,png,jpeg,gif,svg',
+            'phone' => 'required',
             'name' => 'required',
             'email' => 'required',
         ];

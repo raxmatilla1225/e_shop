@@ -18,6 +18,8 @@
                 <th scope="col">ID</th>
                 <th scope="col">{{__('user.name')}}</th>
                 <th scope="col">{{ __('user.email') }}</th>
+                <th scope="col">{{__('user.phone')}}</th>
+                <th scope="col">{{__('user.image')}} </th>
             </tr>
             </thead>
             <tbody>
@@ -26,6 +28,11 @@
                     <th scope="row">{{$loop->index +1}}</th>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
+                    <td>{{$user->phone}}</td>
+                    <td> <div class="image">
+                            <img src="{{asset('storage/'.$user->image ) }}" class="img-circle elevation-2" width="60px" height="60px"
+                                 alt="User Image">
+                        </div></td>
                     <td>
                         <div class="row">
                             <a class="btn btn-warning" href="{{route('users.show', ['user'=> $user])}}">{{__('user.show')}}</a>
