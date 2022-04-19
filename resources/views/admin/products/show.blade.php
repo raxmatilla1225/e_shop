@@ -50,7 +50,10 @@
             <th scope="row">{{$product->order}}</th>
             <th scope="row">{{$product->slug}}</th>
             <th scope="row">{{$product->main_img}}</th>
-            <th scope="row">{{$product->images}}</th>
+{{--            <th scope="row">{{$product->images}}</th>--}}
+            {{--            @foreach ($product->images as $image)--}}
+            {{--                @json($image)--}}
+            {{--            @endforeach--}}
             <th scope="row">{{$product->brand_id}}</th>
             <th scope="row">{{$product->quantity}}</th>
             <th scope="row">{{$product->delivery_days}}</th>

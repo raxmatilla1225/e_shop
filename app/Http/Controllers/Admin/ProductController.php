@@ -133,6 +133,7 @@ class ProductController extends Controller
         $product->category_id = $request->get('category_id');
         $product->order = $request->get('order');
         $product->slug = $request->get('slug');
+
         if ($image = $request->file('main_img')) {
             $imageDestinationPath = 'uploads/admin/products';
             $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();

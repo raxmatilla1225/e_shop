@@ -106,6 +106,7 @@ class StoreProductRequest extends FormRequest
                 'mimes:jpg,png,jpeg',
             ],
             'images' => [
+                'required',
                 'array'
             ],
             'images.*' => [

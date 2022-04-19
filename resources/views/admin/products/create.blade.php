@@ -20,14 +20,14 @@
                         @enderror
 
                         <div class="col-md-4">
-                            <x-a-l-input placeholder=" {{__('product.name_en')}}" type="text" name="name_en" id="name_en" label="{{__('product.name_en')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('name_en') }}" placeholder=" {{__('product.name_en')}}" type="text" name="name_en" id="name_en" label="{{__('product.name_en')}}"></x-a-l-input>
                         </div>
                         @error('name_en')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
                         <div class="col-md-4">
-                            <x-a-l-input placeholder=" {{__('product.name_uz')}}" type="text" name="name_uz" id="name_uz" label="{{__('product.name_uz')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('name_uz') }}" placeholder=" {{__('product.name_uz')}}" type="text" name="name_uz" id="name_uz" label="{{__('product.name_uz')}}"></x-a-l-input>
                         </div>
                         @error('name_uz')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -38,21 +38,21 @@
                     <div class="card-body row">
 
                         <div class="col-md-4">
-                            <x-a-l-input placeholder=" {{__('product.short_desc_ru')}}" type="text" name="short_desc_ru" id="short_desc_ru" label="{{__('product.short_desc_ru')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('short_desc_ru') }}" placeholder=" {{__('product.short_desc_ru')}}" type="text" name="short_desc_ru" id="short_desc_ru" label="{{__('product.short_desc_ru')}}"></x-a-l-input>
                         </div>
                         @error('name_uz')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
                         <div class="col-md-4">
-                            <x-a-l-input placeholder=" {{__('product.short_desc_en')}}" type="text" name="short_desc_en" id="short_desc_en" label="{{__('product.short_desc_en')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('short_desc_en') }}" placeholder=" {{__('product.short_desc_en')}}" type="text" name="short_desc_en" id="short_desc_en" label="{{__('product.short_desc_en')}}"></x-a-l-input>
                         </div>
                         @error('name_uz')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
                         <div class="col-md-4">
-                            <x-a-l-input placeholder=" {{__('product.short_desc_uz')}}" type="text" name="short_desc_uz" id="short_desc_uz" label="{{__('product.short_desc_uz')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('short_desc_uz') }}" placeholder=" {{__('product.short_desc_uz')}}" type="text" name="short_desc_uz" id="short_desc_uz" label="{{__('product.short_desc_uz')}}"></x-a-l-input>
                         </div>
                         @error('name_uz')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -65,7 +65,7 @@
                         <div class="col-md-4">
                             <label for="desc_ru">{{__('product.desc_ru')}}</label>
                             <textarea id="desc_ru" class="form-control" name="desc_ru" rows="5"
-                                      placeholder="{{__('product.desc_ru')}} ..."></textarea>
+                                      placeholder="{{__('product.desc_ru')}} ...">{{ old('desc_ru') }}</textarea>
                         </div>
                         @error('desc_ru')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -74,7 +74,7 @@
                         <div class="col-md-4">
                             <label for="desc_en">{{__('product.desc_en')}}</label>
                             <textarea id="desc_en" class="form-control" name="desc_en" rows="5"
-                                      placeholder="{{__('product.desc_en')}} ..."></textarea>
+                                      placeholder="{{__('product.desc_en')}} ...">{{ old('desc_en') }}</textarea>
                         </div>
                         @error('desc_en')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -83,7 +83,7 @@
                         <div class="col-md-4">
                             <label for="desc_uz">{{__('product.desc_uz')}}</label>
                             <textarea id="desc_uz" class="form-control" name="desc_uz" rows="5"
-                                      placeholder="{{__('product.desc_uz')}} ..."></textarea>
+                                      placeholder="{{__('product.desc_uz')}} ...">{{ old('desc_uz') }}</textarea>
                         </div>
                         @error('desc_uz')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -93,21 +93,21 @@
                     <div class="card-body row">
 
                         <div class="col-md-4">
-                            <x-a-l-input placeholder=" {{__('product.price')}}" type="number" name="price" id="price" label="{{__('product.price')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('price') }}" placeholder=" {{__('product.price')}}" type="number" name="price" id="price" label="{{__('product.price')}}"></x-a-l-input>
                         </div>
                         @error('price')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
                         <div class="col-md-4">
-                            <x-a-l-input placeholder=" {{__('product.old_price')}}" type="number" name="old_price" id="old_price" label="{{__('product.old_price')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('old_price') }}" placeholder=" {{__('product.old_price')}}" type="number" name="old_price" id="old_price" label="{{__('product.old_price')}}"></x-a-l-input>
                         </div>
                         @error('old_price')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
                         <div class="col-md-4">
-                            <x-a-l-input placeholder=" {{__('product.discount')}}" type="number" name="discount" id="discount" label="{{__('product.discount')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('discount') }}" placeholder=" {{__('product.discount')}}" type="number" name="discount" id="discount" label="{{__('product.discount')}}"></x-a-l-input>
                         </div>
                         @error('discount')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -170,14 +170,14 @@
                     <div class="card-body row">
 
                         <div class="col-md-6">
-                            <x-a-l-input placeholder=" {{__('product.order')}}" type="number" name="order" id="order" label="{{__('product.order')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('order') }}" placeholder=" {{__('product.order')}}" type="number" name="order" id="order" label="{{__('product.order')}}"></x-a-l-input>
                         </div>
                         @error('order')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
                         <div class="col-md-6">
-                            <x-a-l-input placeholder=" {{__('product.slug')}}" type="text" name="slug" id="slug" label="{{__('product.slug')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('slug') }}" placeholder=" {{__('product.slug')}}" type="text" name="slug" id="slug" label="{{__('product.slug')}}"></x-a-l-input>
                         </div>
                         @error('slug')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -224,14 +224,14 @@
                     <div class="card-body row">
 
                         <div class="col-md-6">
-                            <x-a-l-input placeholder=" {{__('product.quantity')}}" type="number" name="quantity" id="quantity" label="{{__('product.quantity')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('quantity') }}" placeholder=" {{__('product.quantity')}}" type="number" name="quantity" id="quantity" label="{{__('product.quantity')}}"></x-a-l-input>
                         </div>
                         @error('quantity')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
                         <div class="col-md-6">
-                            <x-a-l-input placeholder=" {{__('product.delivery_days')}}" type="text" name="delivery_days" id="delivery_days" label="{{__('product.delivery_days')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('delivery_days') }}" placeholder=" {{__('product.delivery_days')}}" type="text" name="delivery_days" id="delivery_days" label="{{__('product.delivery_days')}}"></x-a-l-input>
                         </div>
                         @error('delivery_days')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -249,5 +249,18 @@
         </div>
 
     </div>
+    <script>
+        function string_to_slug (str){
+            const slugify = str =>
+                str
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^\w\s-]/g, '')
+                    .replace(/[\s_-]+/g, '-')
+                    .replace(/^-+|-+$/g, '');
+
+            return slugify
+        }
+    </script>
 
 @endsection
