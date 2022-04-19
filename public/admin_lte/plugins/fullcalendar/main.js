@@ -693,7 +693,7 @@ var FullCalendar = (function (exports) {
         for (var i = propObjs.length - 1; i >= 0; i -= 1) {
             var props = propObjs[i];
             for (var name_2 in props) {
-                if (!(name_2 in dest)) { // if already assigned by previous props or complex props, don't reassign
+                if (!(name_2 in dest)) { // if already assigned by previous property or complex property, don't reassign
                     dest[name_2] = props[name_2];
                 }
             }
@@ -788,7 +788,7 @@ var FullCalendar = (function (exports) {
                 return false;
             }
         }
-        // check for props that were omitted in the new
+        // check for property that were omitted in the new
         for (var key in oldProps) {
             if (!(key in newProps)) {
                 return false;
@@ -1993,7 +1993,7 @@ var FullCalendar = (function (exports) {
 
     // TODO: better called "EventSettings" or "EventConfig"
     // TODO: move this file into structs
-    // TODO: separate constraint/overlap/allow, because selection uses only that, not other props
+    // TODO: separate constraint/overlap/allow, because selection uses only that, not other property
     var EVENT_UI_REFINERS = {
         display: String,
         editable: Boolean,
@@ -2100,7 +2100,7 @@ var FullCalendar = (function (exports) {
     }
     /*
     Will NOT populate extendedProps with the leftover properties.
-    Will NOT populate date-related props.
+    Will NOT populate date-related property.
     */
     function parseEventDef(refined, extra, sourceId, allDay, hasEnd, context) {
         var def = {
@@ -2121,7 +2121,7 @@ var FullCalendar = (function (exports) {
             var memberAdder = _a[_i];
             __assign(def, memberAdder(refined));
         }
-        // help out EventApi from having users modify props
+        // help out EventApi from having users modify property
         Object.freeze(def.ui.classNames);
         Object.freeze(def.extendedProps);
         return def;
@@ -2149,7 +2149,7 @@ var FullCalendar = (function (exports) {
                 allDay = defaultAllDay;
             }
             else {
-                // fall back to the date props LAST
+                // fall back to the date property LAST
                 allDay = (!startMeta || startMeta.isTimeUnspecified) &&
                     (!endMeta || endMeta.isTimeUnspecified);
             }
@@ -2461,7 +2461,7 @@ var FullCalendar = (function (exports) {
         objs.sort(function (obj0, obj1) { return compareByFieldSpecs(obj0, obj1, eventOrderSpecs); });
         return objs.map(function (c) { return c._seg; });
     }
-    // returns a object with all primitive props that can be compared
+    // returns a object with all primitive property that can be compared
     function buildSegCompareObj(seg) {
         var eventRange = seg.eventRange;
         var eventDef = eventRange.def;
@@ -2623,7 +2623,7 @@ var FullCalendar = (function (exports) {
     }
     /*
     TODO: somehow combine with parseRange?
-    Will return null if the start/end props were present but parsed invalidly.
+    Will return null if the start/end property were present but parsed invalidly.
     */
     function parseOpenDateSpan(raw, dateEnv) {
         var _a = refineProps(raw, STANDARD_PROPS), standardProps = _a.refined, extra = _a.extra;
@@ -2644,7 +2644,7 @@ var FullCalendar = (function (exports) {
             span0.allDay === span1.allDay &&
             isSpanPropsEqual(span0, span1);
     }
-    // the NON-DATE-RELATED props
+    // the NON-DATE-RELATED property
     function isSpanPropsEqual(span0, span1) {
         for (var propName in span1) {
             if (propName !== 'range' && propName !== 'allDay') {
@@ -2653,7 +2653,7 @@ var FullCalendar = (function (exports) {
                 }
             }
         }
-        // are there any props that span0 has that span1 DOESN'T have?
+        // are there any property that span0 has that span1 DOESN'T have?
         // both have range/allDay, so no need to special-case.
         for (var propName in span0) {
             if (!(propName in span1)) {
@@ -3638,7 +3638,7 @@ var FullCalendar = (function (exports) {
             configurable: true
         });
         Object.defineProperty(EventApi.prototype, "id", {
-            // computable props that all access the def
+            // computable property that all access the def
             // TODO: find a TypeScript-compatible way to do this at scale
             get: function () { return this._def.publicId; },
             enumerable: false,
@@ -8763,7 +8763,7 @@ var FullCalendar = (function (exports) {
                 return false;
             }
         }
-        return isNewPropsValid({ eventDrag: interaction }, context); // HACK: the eventDrag props is used for ALL interactions
+        return isNewPropsValid({ eventDrag: interaction }, context); // HACK: the eventDrag property is used for ALL interactions
     }
     function isDateSelectionValid(dateSelection, dateProfile, context) {
         if (!rangeContainsRange(dateProfile.validRange, dateSelection.range)) {
@@ -8790,7 +8790,7 @@ var FullCalendar = (function (exports) {
     // ------------------------------------------------------------------------------------------------------------------------
     function isInteractionPropsValid(state, context, dateSpanMeta, filterConfig) {
         var currentState = context.getCurrentData();
-        var interaction = state.eventDrag; // HACK: the eventDrag props is used for ALL interactions
+        var interaction = state.eventDrag; // HACK: the eventDrag property is used for ALL interactions
         var subjectEventStore = interaction.mutatedEvents;
         var subjectDefs = subjectEventStore.defs;
         var subjectInstances = subjectEventStore.instances;
@@ -9216,7 +9216,7 @@ var FullCalendar = (function (exports) {
         __extends(SimpleScrollGrid, _super);
         function SimpleScrollGrid() {
             var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.processCols = memoize(function (a) { return a; }, isColPropsEqual); // so we get same `cols` props every time
+            _this.processCols = memoize(function (a) { return a; }, isColPropsEqual); // so we get same `cols` property every time
             // yucky to memoize VNodes, but much more efficient for consumers
             _this.renderMicroColGroup = memoize(renderMicroColGroup);
             _this.scrollerRefs = new RefMap();
@@ -9287,7 +9287,7 @@ var FullCalendar = (function (exports) {
             var _a = this.state, forceYScrollbars = _a.forceYScrollbars, scrollerClientWidths = _a.scrollerClientWidths, scrollerClientHeights = _a.scrollerClientHeights;
             var needsYScrolling = getAllowYScrolling(props, sectionConfig); // TODO: do lazily. do in section config?
             var isLiquid = getSectionHasLiquidHeight(props, sectionConfig);
-            // for `!props.liquid` - is WHOLE scrollgrid natural height?
+            // for `!property.liquid` - is WHOLE scrollgrid natural height?
             // TODO: do same thing in advanced scrollgrid? prolly not b/c always has horizontal scrollbars
             var overflowY = !props.liquid ? 'visible' :
                 forceYScrollbars ? 'scroll' :
@@ -9967,7 +9967,7 @@ var FullCalendar = (function (exports) {
                 document.removeEventListener('mousemove', _this.handleMouseMove);
                 document.removeEventListener('mouseup', _this.handleMouseUp);
                 _this.emitter.trigger('pointerup', _this.createEventFromMouse(ev));
-                _this.cleanup(); // call last so that pointerup has access to props
+                _this.cleanup(); // call last so that pointerup has access to property
             };
             // Touch
             // ----------------------------------------------------------------------------------------------------
@@ -10004,7 +10004,7 @@ var FullCalendar = (function (exports) {
                     targetEl.removeEventListener('touchcancel', _this.handleTouchEnd);
                     window.removeEventListener('scroll', _this.handleTouchScroll, true); // useCaptured=true
                     _this.emitter.trigger('pointerup', _this.createEventFromTouch(ev));
-                    _this.cleanup(); // call last so that pointerup has access to props
+                    _this.cleanup(); // call last so that pointerup has access to property
                     _this.isTouchDragging = false;
                     startIgnoringMouse();
                 }
@@ -12820,7 +12820,7 @@ var FullCalendar = (function (exports) {
                 expandRows ? '' : 'fc-daygrid-body-natural', // will height of one row depend on the others?
             ];
             return (createElement("div", { className: classNames.join(' '), ref: this.handleRootEl, style: {
-                    // these props are important to give this wrapper correct dimensions for interactions
+                    // these property are important to give this wrapper correct dimensions for interactions
                     // TODO: if we set it here, can we avoid giving to inner tables?
                     width: props.clientWidth,
                     minWidth: props.tableMinWidth,
@@ -13990,7 +13990,7 @@ var FullCalendar = (function (exports) {
         TimeCols.prototype.render = function () {
             var _a = this, props = _a.props, state = _a.state;
             return (createElement("div", { className: "fc-timegrid-body", ref: this.handleRootEl, style: {
-                    // these props are important to give this wrapper correct dimensions for interactions
+                    // these property are important to give this wrapper correct dimensions for interactions
                     // TODO: if we set it here, can we avoid giving to inner tables?
                     width: props.clientWidth,
                     minWidth: props.tableMinWidth,

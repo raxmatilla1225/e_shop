@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Client;
+use App\Http\Controllers\Controller;
+use App\Models\Property;
+use App\Models\PropertyType;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreClientRequest;
-use App\Http\Requests\UpdateClientRequest;
 
-class ClientController extends Controller
+class PropertyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,9 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::paginate(5);
-        return view('admin.client.index', ['clients' => $clients]);
+        $property = Property::with('property_type')->paginate();
+        return view('admin.property.index', ['property' => $property]);
+
     }
 
     /**
@@ -27,7 +28,10 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('admin.client.create');
+        $property_types = PropertyType::all();
+        return view('admin.property.create', [
+            'prop_types' => $property_types
+        ]);
     }
 
     /**
@@ -36,60 +40,59 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(StoreClientRequest $request)
+    public function store(Request $request)
     {
-        $client = new Client();
-        $client->name = $request->get('name');
-        $client->username = $request->get('username');
-        $client->phone_number = $request->get('phone_number');
-        $client->save();
-        return redirect()->route('client.index');
+        $property = new Property();
+        $property->name = $request->get('name');
+        $property->property_types_id = $request->get('property_type_id');
+        $property->save();
+        return redirect()->route('property.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Client $client
+     * @param  Property $property
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(Client $client)
+    public function show(Property $property)
     {
-        return view('admin.client.show', ['a' => $client]);
+        return view('admin.property.show', ['property' => $property]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Client $client
+     * @param  Property $property
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Client $client)
+    public function edit(Property $property)
     {
-        return view('admin.client.edit', ['client' => $client]);
+        return view('admin.property.edit', ['property' => $property]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  Client $client
+     * @param  Property $property
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UpdateClientRequest $request, Client $client)
+    public function update(Request $request, Property $property)
     {
-        $client->update($request->only(['name', 'username', 'phone_number']));
-        return redirect()->route('client.index');
+        $property->update($request->only(['name']));
+        return redirect()->route('property.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Client $client
+     * @param  Property $property
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Client $client)
+    public function destroy(Property $property)
     {
-        $client->delete();
+        $property->delete();
         return redirect()->back();
     }
 }

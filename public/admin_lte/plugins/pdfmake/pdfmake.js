@@ -35554,7 +35554,7 @@ function clone(parent, circular, depth, prototype) {
 
 /**
  * Simple flat clone using prototype, accepts only objects, usefull for property
- * override on FLAT configuration object (no nested props).
+ * override on FLAT configuration object (no nested property).
  *
  * USE WITH CAUTION! This may not behave as you wish if you do not know how this
  * works.
