@@ -249,18 +249,27 @@
         </div>
 
     </div>
-    <script>
-        function string_to_slug (str){
-            const slugify = str =>
-                str
-                    .toLowerCase()
-                    .trim()
-                    .replace(/[^\w\s-]/g, '')
-                    .replace(/[\s_-]+/g, '-')
-                    .replace(/^-+|-+$/g, '');
+{{--    <script>--}}
+{{--        function slugify(text)--}}
+{{--        {--}}
+{{--            return text.toString().toLowerCase()--}}
+{{--                .replace(/\s+/g, '-')           // Replace spaces with ---}}
+{{--                .replace(/[^\w\-]+/g, '')       // Remove all non-word chars--}}
+{{--                .replace(/\-\-+/g, '-')         // Replace multiple - with single ---}}
+{{--                .replace(/^-+/, '')             // Trim - from start of text--}}
+{{--                .replace(/-+$/, '');            // Trim - from end of text--}}
+{{--        }--}}
+{{--    </script>--}}
 
-            return slugify
-        }
-    </script>
+{{--    <script>--}}
+{{--        $('#name_ru').change(function (e){--}}
+{{--            $.get('{{route('products.checkSlug')}}',--}}
+{{--                { 'name_ru':$(this).val() },--}}
+{{--                function ( data) {--}}
+{{--                    $('#slug').val(data.slug);--}}
+{{--                }--}}
+{{--            );--}}
+{{--        });--}}
+{{--    </script>--}}
 
 @endsection

@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use http\Env\Request;
 
 class ProductController extends Controller
 {
@@ -69,7 +70,7 @@ class ProductController extends Controller
             if (count($request->images) > 0){
                 $paths = [];
                 foreach ($request->images as $key => $image){
-                    $paths[] = $request->images[$key]->store('././public/uploads/admin/product');
+                    $paths[] = $request->images[$key]->store('products');
                 }
             }
 
@@ -92,6 +93,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+//        dd($product->images);
         return view('admin.products.show', ['product' => $product]);
     }
 
@@ -143,7 +145,7 @@ class ProductController extends Controller
         if (count($request->images) > 0){
             $paths = [];
             foreach ($request->images as $key => $image){
-                $paths[] = $request->images[$key]->store('././public/uploads/admin/product');
+                $paths[] = $request->images[$key]->store('products');
             }
         }
 
@@ -162,10 +164,19 @@ class ProductController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Product $product)
     {
-        //
+        $status = $product->delete();
+        if ($status) {
+            return redirect()->route('products.index')->with('success', 'Product deleted successfully');
+        }
+        return redirect()->back();
     }
+
+//    public function checkSlug(Request $request)
+//    {
+////        $slug = SlugService::createSlug
+//    }
 }

@@ -1,8 +1,14 @@
 @extends('admin.layout.master')
 @section('title', 'Product-show')
 @section('content')
-
-
+{{--<div class="row">--}}
+{{--    <div class="col-md-4">--}}
+{{--        @foreach ($product->images as $image)--}}
+{{--            --}}{{--                    <img src="{{asset('../storage/app/'.$image)}}" alt="">--}}
+{{--            <img src="storage/app/{{$image}}" width="20px" alt="">--}}
+{{--        @endforeach--}}
+{{--    </div>--}}
+{{--</div>--}}
     <table class="table">
         <thead>
         <tr>
@@ -49,11 +55,16 @@
             <th scope="row">{{$product->category_id}}</th>
             <th scope="row">{{$product->order}}</th>
             <th scope="row">{{$product->slug}}</th>
-            <th scope="row">{{$product->main_img}}</th>
-{{--            <th scope="row">{{$product->images}}</th>--}}
-            {{--            @foreach ($product->images as $image)--}}
-            {{--                @json($image)--}}
-            {{--            @endforeach--}}
+            <th scope="row">
+                <img src="{{asset("uploads/admin/products/".$product->main_img)}}" width="120px" alt="">
+            </th>
+            <th scope="row">
+                @foreach ($product->images as $image)
+{{--                    <img src="{{asset('../storage/app/'.$image)}}" alt="">--}}
+                <img src="{{asset('storage/'.$image)}}" width="20px" alt="">
+{{--                <img src="{{Storage::url("app/".$image)}}" width="20px" alt="">--}}
+            @endforeach
+            </th>
             <th scope="row">{{$product->brand_id}}</th>
             <th scope="row">{{$product->quantity}}</th>
             <th scope="row">{{$product->delivery_days}}</th>
