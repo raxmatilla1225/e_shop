@@ -12,6 +12,6 @@ class Client extends Model
 
     public function status()
     {
-        return $this->belongsTo(Statuses::class);
+        return $this->belongsTo(Status::class);
     }
 }

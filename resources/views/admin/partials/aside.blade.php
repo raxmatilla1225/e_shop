@@ -59,6 +59,18 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{route('status.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/status*')) active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('status.status')}}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('types.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/type*')) active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('type.type')}}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{route('categories.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/categories*')) active @endif">
 
                                 <i class="far fa-circle nav-icon"></i>
