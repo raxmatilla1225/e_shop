@@ -3123,7 +3123,7 @@
   const disposeSwal = instance => {
     disposeWeakMaps(instance); // Unset this.params so GC will dispose it (#1569)
 
-    delete instance.params; // Unset globalState property so GC will dispose globalState (#1569)
+    delete instance.params; // Unset globalState props so GC will dispose globalState (#1569)
 
     delete globalState.keydownHandler;
     delete globalState.keydownTarget; // Unset currentInstance

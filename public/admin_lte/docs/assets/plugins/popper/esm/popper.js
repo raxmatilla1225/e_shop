@@ -2037,7 +2037,7 @@ function inner(data) {
  * Popper.js uses a set of 9 modifiers to provide all the basic functionalities
  * needed by the library.
  *
- * Usually you don't want to override the `order`, `fn` and `onLoad` property.
+ * Usually you don't want to override the `order`, `fn` and `onLoad` props.
  * All the other properties are configurations that could be tweaked.
  * @namespace modifiers
  */
