@@ -10,7 +10,10 @@ class Status extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'name',
+        'statuses_type_id'
+    ];
 
     public function type()
     {

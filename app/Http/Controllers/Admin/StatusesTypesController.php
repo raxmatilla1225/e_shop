@@ -41,7 +41,7 @@ class StatusesTypesController extends Controller
             'name'=>'required'
         ]);
         StatusesType::create($request->all());
-        return redirect()->route('types.index')->with('succes','Status Type created successfully');
+        return redirect()->route('types.index')->with('success','Status Type created successfully');
 
     }
 
@@ -78,7 +78,7 @@ class StatusesTypesController extends Controller
     {
         $model=$type->update($request->validate(['name'=>'required']));
         if($type){
-            return redirect()->route('types.index')->with('succes','Status type updated successfully');
+            return redirect()->route('types.index')->with('success','Status type updated successfully');
         }
         return redirect()->back();
     }
@@ -92,6 +92,6 @@ class StatusesTypesController extends Controller
     public function destroy(StatusesType $type)
     {
         $type->delete();
-        return redirect()->route('types.index')->with('succes', 'Status Type deleted succsefully');
+        return redirect()->route('types.index')->with('success', 'Status Type deleted successfully');
     }
 }
