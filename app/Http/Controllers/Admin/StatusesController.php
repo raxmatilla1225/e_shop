@@ -8,6 +8,7 @@ use App\Models\StatusesType;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class StatusesController extends Controller
@@ -46,16 +47,11 @@ class StatusesController extends Controller
         $request->validate([
             'name' => 'required',
         ]);
-//        $status = Status::create([
-//            'name' => $request->get('name'),
-//            'statuses_type_id' => $request->get('statuses_type_id'),
-//        ]);
         $status = new Status();
         $status->name = $request->get('name');
         $status->statuses_type_id=$request->get('statuses_type_id');
-        $status->save();
-        if ($status) {
-            return redirect()->route('status.index')->with('succes', 'Status created Successfully');
+        if ($status->save()) {
+            return redirect()->route('status.index')->with('success', 'Status created successfully');
         };
         return redirect()->back();
     }
@@ -87,7 +83,7 @@ class StatusesController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Models\Status $status
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function update(Request $request, Status $status)
     {
@@ -97,20 +93,19 @@ class StatusesController extends Controller
                'required'
            ]
         ]);
-
         $status->update($request->all());
-        return redirect()->route('status.index')->with('succes','Status updated successfully');
+        return redirect()->route('status.index')->with('success','Status updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param \App\Models\Status $status
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function destroy(Status $status)
+    public function destroy(Status $status): RedirectResponse
     {
         $status->delete();
-        return redirect()->route('status.index')->with('succes', 'Status deleted successfully');
+        return redirect()->route('status.index')->with('success', 'Status deleted successfully');
     }
 }
