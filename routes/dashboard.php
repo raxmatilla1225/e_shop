@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\PropertyPropertytypeController;
 use App\Http\Controllers\Admin\PropertyTypeController;
 use App\Http\Controllers\Admin\PersonalController;
 use App\Http\Controllers\Admin\ProvinceController;
+use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\NewsCategoryController;
 use App\Http\Controllers\Admin\NewsController;
@@ -41,6 +42,7 @@ Route::middleware(['adminAuth'])->group(callback: function (){
     Route::resource('warehouse',WarehouseController::class);
     Route::resource('status', StatusesController::class);
     Route::resource('types', StatusesTypesController::class);
+    Route::resource('roles', RolesController::class);
 
     Route::resource('categories', CategoryController::class);
 
