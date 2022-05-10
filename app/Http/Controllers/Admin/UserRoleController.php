@@ -14,7 +14,7 @@ class UserRoleController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.user_role.create');
     }
 
     /**
