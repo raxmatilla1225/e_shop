@@ -3553,13 +3553,13 @@ var effectsEffectSize = $.effects.define( "size", function( options, done ) {
 	// Scale the css box
 	if ( scale === "box" || scale === "both" ) {
 
-		// Vertical property scaling
+		// Vertical props scaling
 		if ( factor.from.y !== factor.to.y ) {
 			from = $.effects.setTransition( element, vProps, factor.from.y, from );
 			to = $.effects.setTransition( element, vProps, factor.to.y, to );
 		}
 
-		// Horizontal property scaling
+		// Horizontal props scaling
 		if ( factor.from.x !== factor.to.x ) {
 			from = $.effects.setTransition( element, hProps, factor.from.x, from );
 			to = $.effects.setTransition( element, hProps, factor.to.x, to );
@@ -3569,7 +3569,7 @@ var effectsEffectSize = $.effects.define( "size", function( options, done ) {
 	// Scale the content
 	if ( scale === "content" || scale === "both" ) {
 
-		// Vertical property scaling
+		// Vertical props scaling
 		if ( factor.from.y !== factor.to.y ) {
 			from = $.effects.setTransition( element, cProps, factor.from.y, from );
 			to = $.effects.setTransition( element, cProps, factor.to.y, to );
@@ -3612,13 +3612,13 @@ var effectsEffectSize = $.effects.define( "size", function( options, done ) {
 					outerWidth: childOriginal.width * factor.to.x
 				};
 
-			// Vertical property scaling
+			// Vertical props scaling
 			if ( factor.from.y !== factor.to.y ) {
 				childFrom = $.effects.setTransition( child, vProps, factor.from.y, childFrom );
 				childTo = $.effects.setTransition( child, vProps, factor.to.y, childTo );
 			}
 
-			// Horizontal property scaling
+			// Horizontal props scaling
 			if ( factor.from.x !== factor.to.x ) {
 				childFrom = $.effects.setTransition( child, hProps, factor.from.x, childFrom );
 				childTo = $.effects.setTransition( child, hProps, factor.to.x, childTo );

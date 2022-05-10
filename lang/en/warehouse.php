@@ -13,5 +13,6 @@ return [
     'update'=>'Update',
     'create_msg'=>'Warehouse created successfully',
     'edit_msg'=>'Warehouse updated successfully',
-    'delete_msg'=>'Warehouse deleted successfully'
+    'delete_msg'=>'Warehouse deleted successfully',
+    'roles' => 'Roles'
 ];

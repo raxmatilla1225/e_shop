@@ -3174,7 +3174,7 @@ var rootjQuery,
 						true
 					) );
 
-					// HANDLE: $(html, property)
+					// HANDLE: $(html, props)
 					if ( rsingleTag.test( match[ 1 ] ) && jQuery.isPlainObject( context ) ) {
 						for ( match in context ) {
 
@@ -5796,7 +5796,7 @@ jQuery.Event.prototype = {
 	}
 };
 
-// Includes all common event property including KeyEvent and MouseEvent specific property
+// Includes all common event props including KeyEvent and MouseEvent specific props
 jQuery.each( {
 	altKey: true,
 	bubbles: true,
@@ -6941,7 +6941,7 @@ jQuery.extend( {
 				value += ret && ret[ 3 ] || ( jQuery.cssNumber[ origName ] ? "" : "px" );
 			}
 
-			// background-* property affect original clone's values
+			// background-* props affect original clone's values
 			if ( !support.clearCloneStyle && value === "" && name.indexOf( "background" ) === 0 ) {
 				style[ name ] = "inherit";
 			}
