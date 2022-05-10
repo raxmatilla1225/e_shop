@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreUserRequest;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserRoleController extends Controller
@@ -14,7 +17,9 @@ class UserRoleController extends Controller
      */
     public function index()
     {
-        return view('admin.user_role.create');
+        $users = User::all();
+        $roles = Role::all();
+        return view('admin.user_role.create', ['users' => $users , 'roles' => $roles]);
     }
 
     /**
@@ -33,9 +38,12 @@ class UserRoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
-        //
+        if ($status->save()) {
+            return redirect()->route('status.index')->with('success', 'Status created successfully');
+        };
+        return redirect()->back();
     }
 
     /**

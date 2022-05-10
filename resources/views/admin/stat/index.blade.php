@@ -28,7 +28,7 @@
                     <tr>
                         <th>{{$stat->id}}</th>
                         <td>{{$stat->name}}</td>
-                        <td>{{$stat->type->name}}</td>
+                        <td>{{$stat->type->name ?? 'none'}}</td>
                         <td>
                             <div class="row">
                                 <a class="btn btn-primary ml-1" href="{{route('status.edit', $stat->id)}}">{{__('user.update')}}</a>

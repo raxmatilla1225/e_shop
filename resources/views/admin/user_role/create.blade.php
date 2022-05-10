@@ -1,27 +1,31 @@
 @extends('admin.layout.master')
-@section('title','Users-create')
+@section('title','User Role')
 @section('content')
+    <div class="container">
   <div class="container">
       <form action="{{route('user_role.store')}}" method="post" enctype="multipart/form-data">
           @method('POST')
           @csrf
-          <label  class="form-label">Choose user</label>
-          <select class="form-select" aria-label="Default select example" name="user">
-              <option value="0">None</option>
-              @foreach($users as $user)
-                  <option value="{{$user->id}}">{{$user->name}}</option>
-              @endforeach
-          </select>
+
+          <div class="form-group">
+              <label for="mySelect">Choose user</label>
+              <select id="mySelect" class="form-control" name="user_id">
+                  @foreach($users as $user)
+                      <option value="{{$user->id}}">{{$user->name}}</option>
+                  @endforeach
+              </select>
+          </div>
           @error('user')
           <div class="alert alert-danger">{{ $message }}</div>
           @enderror
-          <label  class="form-label">Choose role</label>
-          <select class="form-select" aria-label="Default select example" class="role">
-              <option value="0">None</option>
-              @foreach($roles as $role)
-                  <option value="{{$role->id}}">{{$role->name}}</option>
-              @endforeach
-          </select>
+          <div class="form-group">
+              <label for="mySelect">Choose role</label>
+              <select id="mySelect" class="form-control" name="role_id">
+                  @foreach($roles as $role)
+                      <option value="{{$role->id}}">{{$role->name}}</option>
+                  @endforeach
+              </select>
+          </div>
           @error('role')
           <div class="alert alert-danger">{{ $message }}</div>
           @enderror
@@ -29,4 +33,5 @@
           <button type="submit" class="btn btn-primary">{{__('user.submit')}}</button>
       </form>
   </div>
+    </div>
 @endsection
