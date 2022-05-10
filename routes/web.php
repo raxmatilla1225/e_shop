@@ -18,6 +18,6 @@ Route::get('/', function (){
     return redirect()->route('admin.dashboard.index');
 });
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
