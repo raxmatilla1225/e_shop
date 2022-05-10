@@ -39,6 +39,8 @@ Route::middleware(['adminAuth'])->group(callback: function (){
     Route::resource('warehouse',WarehouseController::class);
 
     Route::resource('categories', CategoryController::class);
+    Route::resource('market', \App\Http\Controllers\Admin\MarketController::class);
+    Route::resource('brands', \App\Http\Controllers\Admin\BrandsController::class);
 
     Route::resource('provinces', ProvinceController::class);
     Route::get('language/{locale}', function ($locale) {
