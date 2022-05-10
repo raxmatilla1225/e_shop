@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('client')
+@section('content')
     <div class="main-panel" id="main-panel">
 
     <div class="panel-header panel-header-sm">
