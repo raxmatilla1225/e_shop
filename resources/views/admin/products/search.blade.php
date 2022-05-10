@@ -58,11 +58,13 @@
                         {{--                        <th scope="col">{{__('product.brand_id')}}</th>--}}
                         {{--                        <th scope="col">{{__('product.quantity')}}</th>--}}
                         {{--                        <th scope="col">{{__('product.delivery_days')}}</th>--}}
-                        <th scope="col">{{__('product.actions')}}</th>
+{{--                        <th scope="col">{{__('product.actions')}}</th>--}}
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($products as $product)
+{{--                    @foreach($products as $product)--}}
+{{--{{dd($products)}}--}}
+                        @forelse( $products as $product)
                         <tr>
                             <td>{{$product->id}}</td>
                             {{--                            <td>{{$product->name_ru ?: 'NULL'}}</td>--}}
@@ -78,7 +80,7 @@
                             {{--                            <td>{{$product->old_price ?: 'NULL'}}</td>--}}
                             {{--                            <td>{{$product->discount ?: 'NULL'}}</td>--}}
                             {{--                            <td>{{$product->status_id ?: 'NULL'}}</td>--}}
-                            <td>{{$product->category->title_uz ?: 'NULL'}}</td>
+                            <td>{{$product->title_uz ?: 'NULL'}}</td>
                             {{--                            <td>{{$product->order ?: 'NULL'}}</td>--}}
                             {{--                            <td>{{$product->slug ?: 'NULL'}}</td>--}}
                             <td><img alt="news_image" src="{{asset("uploads/admin/products/".$product->main_img) }}"
@@ -88,24 +90,27 @@
                             {{--                            <td>{{$product->brand_id ?: 'NULL'}}</td>--}}
                             {{--                            <td>{{$product->quantity ?: 'NULL'}}</td>--}}
                             {{--                            <td>{{$product->delivery_days ?: 'NULL'}}</td>--}}
-                            <td>
-                                <div class="row">
-                                    <a class="btn btn-warning"
-                                       href="{{route('products.show', ['product'=> $product])}}">{{__('product.show')}}</a>
-                                    <a class="btn btn-primary"
-                                       href="{{route('products.edit', ['product'=> $product])}}">{{__('product.update')}}</a>
-                                    <form action="{{route('products.destroy', ['product'=> $product])}}" method="post">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button class="btn btn-danger">{{__('product.delete')}}</button>
-                                    </form>
-                                </div>
-                            </td>
+{{--                            <td>--}}
+{{--                                <div class="row">--}}
+{{--                                    <a class="btn btn-warning"--}}
+{{--                                       href="{{route('products.show', ['product'=> $product])}}">{{__('product.show')}}</a>--}}
+{{--                                    <a class="btn btn-primary"--}}
+{{--                                       href="{{route('products.edit', ['product'=> $product])}}">{{__('product.update')}}</a>--}}
+{{--                                    <form action="{{route('products.destroy', ['product'=> $product])}}" method="post">--}}
+{{--                                        @method('DELETE')--}}
+{{--                                        @csrf--}}
+{{--                                        <button class="btn btn-danger">{{__('product.delete')}}</button>--}}
+{{--                                    </form>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
                         </tr>
-                    @endforeach
+{{--                    @endforeach--}}
+                        @empty
+
+                        @endforelse
                     </tbody>
                 </table>
-                {{--                {{ ($admins->count() > 0) ? $admins->links('vendor.pagination.bootstrap-4') : '' }}--}}
+{{--                                {{ ($products->count() > 0) ? $products->links('vendor.pagination.bootstrap-4') : '' }}--}}
             </div>
         </div>
     </div>

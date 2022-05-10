@@ -19,6 +19,13 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
+                        <div class="col-md-6">
+                            <x-a-l-input value="{{ old('slug') }}" placeholder=" {{__('product.slug')}}" type="text" name="slug" id="slug" label="{{__('product.slug')}}"></x-a-l-input>
+                        </div>
+                        @error('slug')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
                         <div class="col-md-4">
                             <x-a-l-input value="{{ old('name_en') }}" placeholder=" {{__('product.name_en')}}" type="text" name="name_en" id="name_en" label="{{__('product.name_en')}}"></x-a-l-input>
                         </div>
@@ -176,12 +183,7 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
-                        <div class="col-md-6">
-                            <x-a-l-input value="{{ old('slug') }}" placeholder=" {{__('product.slug')}}" type="text" name="slug" id="slug" label="{{__('product.slug')}}"></x-a-l-input>
-                        </div>
-                        @error('slug')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+
 
                     </div>
 
@@ -249,18 +251,27 @@
         </div>
 
     </div>
-    <script>
-        function string_to_slug (str){
-            const slugify = str =>
-                str
-                    .toLowerCase()
-                    .trim()
-                    .replace(/[^\w\s-]/g, '')
-                    .replace(/[\s_-]+/g, '-')
-                    .replace(/^-+|-+$/g, '');
+{{--    <script>--}}
+{{--        function slugify(text)--}}
+{{--        {--}}
+{{--            return text.toString().toLowerCase()--}}
+{{--                .replace(/\s+/g, '-')           // Replace spaces with ---}}
+{{--                .replace(/[^\w\-]+/g, '')       // Remove all non-word chars--}}
+{{--                .replace(/\-\-+/g, '-')         // Replace multiple - with single ---}}
+{{--                .replace(/^-+/, '')             // Trim - from start of text--}}
+{{--                .replace(/-+$/, '');            // Trim - from end of text--}}
+{{--        }--}}
+{{--    </script>--}}
 
-            return slugify
-        }
-    </script>
+{{--    <script>--}}
+{{--        $('#name_ru').change(function (e){--}}
+{{--            $.get('{{route('products.slug')}}',--}}
+{{--                { 'name_ru':$(this).val() },--}}
+{{--                function ( data) {--}}
+{{--                    $('#slug').val(data.slug);--}}
+{{--                }--}}
+{{--            );--}}
+{{--        });--}}
+{{--    </script>--}}
 
 @endsection

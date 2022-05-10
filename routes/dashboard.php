@@ -38,6 +38,7 @@ Route::middleware(['adminAuth'])->group(callback: function (){
     Route::resource('users', UserController::class);
 
     Route::resource('products', ProductController::class);
+    Route::get('product/search', [ProductController::class, 'search'])->name('product.search');
 
     Route::resource('news', NewsController::class);
     Route::resource('newsCategory', NewsCategoryController::class);
