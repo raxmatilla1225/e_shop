@@ -113,6 +113,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+//        if(\Auth::user()->hasPermisson('edit_cat')){
+//
+//        }
         return view('admin.products.edit', ['product' => $product]);
 
     }
