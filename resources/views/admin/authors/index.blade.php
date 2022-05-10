@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title','NewCategory')
+@section('title','Authors')
 @section('content')
     <div class="container">
         <div class="row float-right">
