@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\NewsCategoryController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\AuthorController;
+use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Admin\WarehouseController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\Admin\StatusesController;
@@ -47,6 +48,7 @@ Route::middleware(['adminAuth'])->group(callback: function (){
     Route::resource('categories', CategoryController::class);
 
     Route::resource('provinces', ProvinceController::class);
+    Route::resource('user_role', UserRoleController::class);
     Route::get('language/{locale}', function ($locale) {
       if(in_array($locale, config('app.available_locales'))){
           session()->put('locale', $locale);
