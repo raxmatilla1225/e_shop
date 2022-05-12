@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PropertyController;
 use App\Http\Controllers\Admin\PropertyPropertytypeController;
 use App\Http\Controllers\Admin\PropertyTypeController;
 use App\Http\Controllers\Admin\PersonalController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\UserController;
@@ -33,6 +34,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['adminAuth'])->group(callback: function (){
     Route::resource('users', UserController::class);
 
+    Route::resource('products', ProductController::class);
+    Route::get('product/search', [ProductController::class, 'search'])->name('product.search');
+
     Route::resource('news', NewsController::class);
     Route::resource('newsCategory', NewsCategoryController::class);
     Route::resource('authors', AuthorController::class);
@@ -43,6 +47,8 @@ Route::middleware(['adminAuth'])->group(callback: function (){
     Route::resource('roles', RolesController::class);
 
     Route::resource('categories', CategoryController::class);
+    Route::resource('market', \App\Http\Controllers\Admin\MarketController::class);
+    Route::resource('brands', \App\Http\Controllers\Admin\BrandsController::class);
 
     Route::resource('provinces', ProvinceController::class);
     Route::resource('user_role', UserRoleController::class);

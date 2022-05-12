@@ -76,8 +76,8 @@
                     @enderror
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="view_count">{{__('new.view_count')}}</label>
-                    <input type="number" min="0" id="views_count" class="form-control" name="view_count">
+                    <label for="views_count">{{__('new.view_count')}}</label>
+                    <input type="number" min="0" id="views_count" class="form-control" name="views_count">
                     @error('description')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
