@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -39,11 +42,27 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-
         $category = new Category();
-        $category->fill($request->validated());
-        $category->save();
-        return redirect()->route('categories.index')->with('success' , 'Category added successfully');
+        $category->title_en = $request->get('title_en');
+        $category->title_ru = $request->get('title_ru');
+        $category->title_uz = $request->get('title_uz');
+        $category->slug = Str::slug($request->get('title_en'));
+        $category->description_en = $request->get('description_en');
+        $category->description_ru = $request->get('description_ru');
+        $category->description_uz = $request->get('description_uz');
+        $category->icon = $request->get('icon');
+        $category->parent_id = $request->get('parent_id');
+        $category->order = $request->get('order');
+        $category->status = $request->get('status');
+        if ($image = $request->file('image')) {
+            $imageDestinationPath = 'uploads/admin/categories';
+            $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($imageDestinationPath, $postImage);
+            $category->image = $postImage;
+        }
+        if($category->save()){
+            return redirect()->route('categories.index')->with('success' , 'Category added successfully');
+        }
     }
 
     /**
@@ -78,11 +97,28 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        $category = $category->update($request->validated());
-        if($category){
+
+        $category->title_en = $request->get('title_en');
+        $category->title_ru = $request->get('title_ru');
+        $category->title_uz = $request->get('title_uz');
+        $category->slug = Str::slug($request->get('title_en'));
+        $category->description_en = $request->get('description_en');
+        $category->description_ru = $request->get('description_ru');
+        $category->description_uz = $request->get('description_uz');
+        $category->icon = $request->get('icon');
+        $category->parent_id = $request->get('parent_id');
+        $category->order = $request->get('order');
+        $category->status = $request->get('status');
+        if ($image = $request->file('image')) {
+            $imageDestinationPath = 'uploads/admin/categories';
+            $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($imageDestinationPath, $postImage);
+            $category->image = $postImage;
+        }
+        if($category->update()){
             return redirect()->route('categories.index')->with('success','Category updated successfully');
         }
-        return redirect()->back();
+
     }
 
     /**
