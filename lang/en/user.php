@@ -19,5 +19,6 @@ return [
     'user' => "User",
     'type' => "Type",
     'phone' => 'Phone',
-    'image' => 'Image'
+    'image' => 'Image',
+    'user' => 'User'
 ];

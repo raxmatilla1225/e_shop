@@ -1,2 +1,3 @@
 <?php
-return [ 'rolesUsers' => 'Roles and Users'];
+return [ 'rolesUsers' => 'Roles and Users',
+    'user_role' => 'User and Role'];

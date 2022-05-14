@@ -30,7 +30,7 @@
                     <td>{{$user->email}}</td>
                     <td>{{$user->phone}}</td>
                     <td> <div class="image">
-                            <img src="{{asset('storage/'.$user->image ) }}" class="img-circle elevation-2" width="60px" height="60px"
+                            <img src="{{asset('uploads/admin/users/'.$user->image ) }}" class="img-circle elevation-2" width="60px" height="60px"
                                  alt="User Image">
                         </div></td>
                     <td>

@@ -8,8 +8,9 @@
           @csrf
 
           <div class="form-group">
-              <label for="mySelect">Choose user</label>
-              <select id="mySelect" class="form-control" name="user_id">
+              <label for="mySelect">{{__('actions.choose' , ['model' => __('user.user')])}}</label>
+              <select id="mySelect" class="form-control" name="user">
+                  <option value="">None</option>
                   @foreach($users as $user)
                       <option value="{{$user->id}}">{{$user->name}}</option>
                   @endforeach
@@ -19,8 +20,9 @@
           <div class="alert alert-danger">{{ $message }}</div>
           @enderror
           <div class="form-group">
-              <label for="mySelect">Choose role</label>
-              <select id="mySelect" class="form-control" name="role_id">
+              <label for="mySelect">{{__('actions.choose' , ['model' => __('role.role')])}}</label>
+              <select id="mySelect" class="form-control" name="role">
+                  <option value="" >None</option>
                   @foreach($roles as $role)
                       <option value="{{$role->id}}">{{$role->name}}</option>
                   @endforeach

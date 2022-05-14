@@ -32,8 +32,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware(['adminAuth'])->group(callback: function (){
+    Route::get('/',function (){
+        return view('admin.dashboard.index');
+    })->name('admin.dashboard.index');
     Route::resource('users', UserController::class);
-
     Route::resource('products', ProductController::class);
     Route::get('product/search', [ProductController::class, 'search'])->name('product.search');
 

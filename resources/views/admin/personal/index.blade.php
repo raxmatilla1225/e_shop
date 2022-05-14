@@ -23,7 +23,7 @@
                             <div class="row">
                                 <div class="col-lg-4 m-auto">
                                         <div class="card-body text-center">
-                                            <img src="{{asset('storage/'.$user->image)}}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px; height: 150px">
+                                            <img src="{{asset('uploads/admin/users/'.$user->image )}}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px; height: 150px">
                                             <h5 class="my-2">{{$user->name}}</h5>
                                         </div>
                                 </div>
