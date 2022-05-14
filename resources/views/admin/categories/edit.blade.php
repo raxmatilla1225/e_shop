@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('content')
+@section('codescription')
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -20,10 +20,10 @@
                         <x-a-l-input type="text" name="description_uz" id="description_uz" label="Description uz" value="{{$category->description_uz}}"></x-a-l-input>
                     </div>
                     <div class="mb-3">
-                        <x-a-l-input type="text" name="description_en" id="description_en" label="Description en" value="{{$category->title_en}}"></x-a-l-input>
+                        <x-a-l-input type="text" name="description_en" id="description_en" label="Description en" value="{{$category->description_en}}"></x-a-l-input>
                     </div>
                     <div class="mb-3">
-                        <x-a-l-input type="text" name="description_ru" id="description_ru" label="Description ru" value="{{$category->title_ru}}"></x-a-l-input>
+                        <x-a-l-input type="text" name="description_ru" id="description_ru" label="Description ru" value="{{$category->description_ru}}"></x-a-l-input>
                     </div>
                     <div class="mb-3">
                         <x-a-l-input type="text" name="icon" id="icon" label="Icon" value="{{$category->icon}}"></x-a-l-input>
@@ -36,7 +36,7 @@
                             <label class="input-group-text" for="inputGroupSelect01">Parent</label>
                         </div>
                         <select class="custom-select" id="inputGroupSelect01" name="parent_id">
-                            <option value="{{$category->id}}">{{$category->title_ru}}</option>
+                            <option value="">None</option>
                             @foreach($categories as $category1)
                                 <option value="{{$category1->id}}">{{$category1->title_ru}}</option>
                             @endforeach
@@ -47,7 +47,7 @@
                             <label class="input-group-text" for="inputGroupSelect01">Order , After which ...</label>
                         </div>
                         <select class="custom-select" id="inputGroupSelect01" name="order">
-                            <option value="{{$category->id}}">{{$category->title_ru}}</option>
+                            <option value="">None</option>
                             @foreach($categories as $category1)
                                 <option value="{{$category1->id}}">{{$category1->title_ru}}</option>
                             @endforeach

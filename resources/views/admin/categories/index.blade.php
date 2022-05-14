@@ -49,7 +49,11 @@
                                  <td>{{$category->icon ?: 'NULL'}}</td>
                                  <td>{{$category->parent_id ?: 'NULL'}}</td>
                                  <td>{{$category->order ?: 'NULL'}}</td>
-                                 <td>{{$category->image ?: 'NULL'}}</td>
+                                 <td> <div class="image">
+                                         <img src="{{asset('uploads/admin/categories/'.$category->image ) }}" class="img-circle elevation-2" width="60px" height="60px"
+                                              alt="User Image">
+                                     </div></td>
+                                 <td>
                                  <td>{{$category->status}}</td>
                                  <td> <div class="row">
                                          <a class="btn btn-warning" href="{{route('categories.show', ['category'=> $category])}}">{{__('user.show')}}</a>
