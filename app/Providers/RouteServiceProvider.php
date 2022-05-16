@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Middleware\SiteLangMiddleware;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -33,10 +34,10 @@ class RouteServiceProvider extends ServiceProvider
                 ->middleware('api')
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware('web')
+            Route::middleware(['web', SiteLangMiddleware::class])
                 ->group(base_path('routes/web.php'));
 
-            Route::middleware('web')
+            Route::middleware(['web', 'adminLocale'])
                 ->prefix('admin')
                 ->group(base_path('routes/dashboard.php'));
         });
