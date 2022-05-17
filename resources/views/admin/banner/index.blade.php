@@ -26,7 +26,7 @@
                     <th scope="row">{{$item->description}}</th>
                     <th scope="row">{{$item->price}}</th>
                     <th scope="row">
-                        <img class="" src="{{asset('public/banner'.$item->image)}}" width="30px" height="30px" alt="...">
+                        <img class="" src="{{ asset('banner/'.$item->image)}}" width="30px" height="30px" alt="...">
                     </th>
                     <th scope="row">
                         @if($item->status == true)

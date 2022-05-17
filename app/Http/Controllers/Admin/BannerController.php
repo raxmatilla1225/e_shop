@@ -41,7 +41,6 @@ class BannerController extends Controller
         $banner = new Banner();
         $banner->title=$request->get('title');
         $banner->description=$request->get('description');
-        $banner->description=$request->get('description');
         $banner->price=$request->get('price');
         if ($request->file('image'))
         {
@@ -52,7 +51,7 @@ class BannerController extends Controller
         }
         $banner->status = $request->get('status');
         $banner->save();
-        return redirect()->route('admin.banner.index');
+        return redirect()->route('banner.index');
     }
 
     /**
