@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('codescription')
+@section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -36,7 +36,7 @@
                             <label class="input-group-text" for="inputGroupSelect01">Parent</label>
                         </div>
                         <select class="custom-select" id="inputGroupSelect01" name="parent_id">
-                            <option value="">None</option>
+                            <option value="{{$category->parent_id}}">Select category</option>
                             @foreach($categories as $category1)
                                 <option value="{{$category1->id}}">{{$category1->title_ru}}</option>
                             @endforeach
@@ -58,7 +58,7 @@
                             <span class="input-group-text">Upload</span>
                         </div>
                         <div class="custom-file">
-                            <x-a-l-input type="file" name="image" id="inputGroupFile01" class="custom-file-input" value="{{$category->image}}"></x-a-l-input>
+                            <x-a-l-input type="file" name="image" id="inputGroupFile01" class="custom-file-input" ></x-a-l-input>
                             <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
                         </div>
                     </div>

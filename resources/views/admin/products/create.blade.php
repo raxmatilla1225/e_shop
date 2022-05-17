@@ -19,13 +19,6 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
-                        <div class="col-md-6">
-                            <x-a-l-input value="{{ old('slug') }}" placeholder=" {{__('product.slug')}}" type="text" name="slug" id="slug" label="{{__('product.slug')}}"></x-a-l-input>
-                        </div>
-                        @error('slug')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-
                         <div class="col-md-4">
                             <x-a-l-input value="{{ old('name_en') }}" placeholder=" {{__('product.name_en')}}" type="text" name="name_en" id="name_en" label="{{__('product.name_en')}}"></x-a-l-input>
                         </div>
@@ -124,7 +117,7 @@
 
                     <div class="card-body row">
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <label for="brand_id">{{__('product.brand_id')}}</label>
                             <select id="brand_id" name="brand_id" class="form-control select2" style="width: 100%;">
                                 <option value=" ">Select brand</option>
@@ -142,24 +135,9 @@
                         @enderror
 
 
-                        <div class="col-md-4">
-                            <label for="status">{{__('product.status_id')}}</label>
-                            <select id="status" name="status_id" class="form-control select2" style="width: 100%;">
-                                <option value=" ">Select status</option>
-                                <option value="1">{{__('product.status_id')}} 1</option>
-                                <option value="2">{{__('product.status_id')}} 2</option>
-                                <option value="3">{{__('product.status_id')}} 3</option>
-                                <option value="4">{{__('product.status_id')}} 4</option>
-{{--                                @foreach($authors as $author)--}}
-{{--                                    <option value="{{ $author->id }}">{{ $author->name }}</option>--}}
-{{--                                @endforeach--}}
-                            </select>
-                        </div>
-                        @error('status_id')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
 
-                        <div class="col-md-4">
+
+                        <div class="col-md-6">
                             <label for="category">{{__('product.category_id')}}</label>
                             <select id="category" name="category_id" class="form-control select2" style="width: 100%;">
                                 <option value=" ">Select category</option>
@@ -183,7 +161,22 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
-
+                        <div class="col-md-6">
+                            <label for="status">{{__('product.status_id')}}</label>
+                            <select id="status" name="status_id" class="form-control select2" style="width: 100%;">
+                                <option value=" ">Select status</option>
+                                <option value="1">{{__('product.status_id')}} 1</option>
+                                <option value="2">{{__('product.status_id')}} 2</option>
+                                <option value="3">{{__('product.status_id')}} 3</option>
+                                <option value="4">{{__('product.status_id')}} 4</option>
+                                {{--                                @foreach($authors as $author)--}}
+                                {{--                                    <option value="{{ $author->id }}">{{ $author->name }}</option>--}}
+                                {{--                                @endforeach--}}
+                            </select>
+                        </div>
+                        @error('status_id')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
 
                     </div>
 
