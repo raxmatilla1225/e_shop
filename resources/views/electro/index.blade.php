@@ -14,10 +14,10 @@
                         <div class="js-slide bg-img-hero-center">
                             <div class="row min-height-420 py-7 py-md-0">
                                 <div class="offset-xl-3 col-xl-4 col-6 mt-md-8">
-                                    <h1 class="font-size-64 text-lh-57 font-weight-light"
+                                   {!! '<h1 class="font-size-64 text-lh-57 font-weight-light"
                                         data-scs-animation-in="fadeInUp">
                                         THE NEW <span class="d-block font-size-55">STANDARD</span>
-                                    </h1>
+                                    </h1>' !!}
                                     <h6 class="font-size-15 font-weight-bold mb-3"
                                         data-scs-animation-in="fadeInUp"
                                         data-scs-animation-delay="200">UNDER FAVORABLE SMARTWATCHES
