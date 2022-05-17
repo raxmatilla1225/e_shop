@@ -246,7 +246,7 @@
                                                         @else
                                                             @if($category->parent_id === 0 && $category->child_categories->count() > 0)
                                                             <li class="u-has-submenu u-header-collapse__submenu">
-                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer"
+                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold   "
                                                                    href="javascript:;"
                                                                    data-target="#headerSidebarComputersCollapse{{$category->id}}"
                                                                    role="button" data-toggle="collapse"
@@ -275,347 +275,6 @@
                                                            href="javascript:;">Value of the Day</a>
                                                     </li>
                                                     <!-- End Value of the Day -->
-
-                                                    <!-- Top 100 Offers -->
-                                                    <li class="">
-                                                        <a class="u-header-collapse__nav-link font-weight-bold"
-                                                           href="javascript:;">Top 100 Offers</a>
-                                                    </li>
-                                                    <!-- End Top 100 Offers -->
-
-                                                    <!-- New Arrivals -->
-                                                    <li class="">
-                                                        <a class="u-header-collapse__nav-link font-weight-bold"
-                                                           href="javascript:;">New Arrivals</a>
-                                                    </li>
-                                                    <!-- End New Arrivals -->
-
-                                                    <!-- Computers & Accessories -->
-                                                    <li class="u-has-submenu u-header-collapse__submenu">
-                                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer"
-                                                           href="javascript:;"
-                                                           data-target="#headerSidebarComputersCollapse" role="button"
-                                                           data-toggle="collapse" aria-expanded="false"
-                                                           aria-controls="headerSidebarComputersCollapse">
-                                                            Computers & Accessories
-                                                        </a>
-
-                                                        <div id="headerSidebarComputersCollapse" class="collapse"
-                                                             data-parent="#headerSidebarContent">
-                                                            <ul class="u-header-collapse__nav-list">
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Computers &amp; Accessories</span>
-                                                                </li>
-                                                                <li class=""><a
-                                                                        class="u-header-collapse__submenu-nav-link"
-                                                                        href="javascript:;">All Computers &
-                                                                        Accessories</a></li>
-                                                                <li class=""><a
-                                                                        class="u-header-collapse__submenu-nav-link"
-                                                                        href="javascript:;">Laptops, Desktops &
-                                                                        Monitors</a></li>
-                                                                <li class=""><a
-                                                                        class="u-header-collapse__submenu-nav-link"
-                                                                        href="javascript:;">Printers & Ink</a></li>
-                                                                <li class=""><a
-                                                                        class="u-header-collapse__submenu-nav-link"
-                                                                        href="javascript:;">Networking & Internet
-                                                                        Devices</a></li>
-                                                                <li class=""><a
-                                                                        class="u-header-collapse__submenu-nav-link"
-                                                                        href="javascript:;">Computer Accessories</a>
-                                                                </li>
-                                                                <li class=""><a
-                                                                        class="u-header-collapse__submenu-nav-link"
-                                                                        href="javascript:;">Software</a></li>
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Office & Stationery</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Office & Stationery</a>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Electronics</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- End Computers & Accessories -->
-
-                                                    <!-- Cameras, Audio & Video -->
-                                                    <li class="u-has-submenu u-header-collapse__submenu">
-                                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer"
-                                                           href="javascript:;"
-                                                           data-target="#headerSidebarCamerasCollapse" role="button"
-                                                           data-toggle="collapse" aria-expanded="false"
-                                                           aria-controls="headerSidebarCamerasCollapse">
-                                                            Cameras, Audio & Video
-                                                        </a>
-
-                                                        <div id="headerSidebarCamerasCollapse" class="collapse"
-                                                             data-parent="#headerSidebarContent">
-                                                            <ul class="u-header-collapse__nav-list">
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Cameras & Photography</span>
-                                                                </li>
-                                                                <li class=""><a
-                                                                        class="u-header-collapse__submenu-nav-link"
-                                                                        href="javascript:;">Lenses</a></li>
-                                                                <li class=""><a
-                                                                        class="u-header-collapse__submenu-nav-link"
-                                                                        href="javascript:;">Camera Accessories</a></li>
-                                                                <li class=""><a
-                                                                        class="u-header-collapse__submenu-nav-link"
-                                                                        href="javascript:;">Security & Surveillance</a>
-                                                                </li>
-                                                                <li class=""><a
-                                                                        class="u-header-collapse__submenu-nav-link"
-                                                                        href="javascript:;">Binoculars & Telescopes</a>
-                                                                </li>
-                                                                <li class=""><a
-                                                                        class="u-header-collapse__submenu-nav-link"
-                                                                        href="javascript:;">Camcorders</a></li>
-                                                                <li class=""><a
-                                                                        class="u-header-collapse__submenu-nav-link"
-                                                                        href="javascript:;">Software</a></li>
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Audio & Video</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Audio & Video</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Headphones & Speakers</a>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Electronics</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- End Cameras, Audio & Video -->
-
-                                                    <!-- Mobiles & Tablets -->
-                                                    <li class="u-has-submenu u-header-collapse__submenu">
-                                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer"
-                                                           href="javascript:;"
-                                                           data-target="#headerSidebarMobilesCollapse" role="button"
-                                                           data-toggle="collapse" aria-expanded="false"
-                                                           aria-controls="headerSidebarMobilesCollapse">
-                                                            Mobiles & Tablets
-                                                        </a>
-
-                                                        <div id="headerSidebarMobilesCollapse" class="collapse"
-                                                             data-parent="#headerSidebarContent">
-                                                            <ul class="u-header-collapse__nav-list">
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Mobiles & Tablets</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Mobile Phones</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Smartphones</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Refurbished Mobiles</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Cases & Covers</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Mobile Accessories</a>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Cases & Covers</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Tablets</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Tablet Accessories</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Electronics</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- End Mobiles & Tablets -->
-
-                                                    <!-- Movies, Music & Video -->
-                                                    <li class="u-has-submenu u-header-collapse__submenu">
-                                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer"
-                                                           href="javascript:;"
-                                                           data-target="#headerSidebarMoviesCollapse" role="button"
-                                                           data-toggle="collapse" aria-expanded="false"
-                                                           aria-controls="headerSidebarMoviesCollapse">
-                                                            Movies, Music & Video
-                                                        </a>
-
-                                                        <div id="headerSidebarMoviesCollapse" class="collapse"
-                                                             data-parent="#headerSidebarContent">
-                                                            <ul class="u-header-collapse__nav-list">
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Movies & TV Shows</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Movies & TV Shows</a>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All English</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Hindi</a></li>
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Video Games</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">PC Games</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Consoles</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Accessories</a></li>
-                                                                <li><span
-                                                                        class="u-header-sidebar__sub-menu-title">Music</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Music</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Indian Classical</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Musical Instruments</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- End Movies, Music & Video -->
-
-                                                    <!-- TV & Audio -->
-                                                    <li class="u-has-submenu u-header-collapse__submenu">
-                                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer"
-                                                           href="javascript:;" data-target="#headerSidebarTvCollapse"
-                                                           role="button" data-toggle="collapse" aria-expanded="false"
-                                                           aria-controls="headerSidebarTvCollapse">
-                                                            TV & Audio
-                                                        </a>
-
-                                                        <div id="headerSidebarTvCollapse" class="collapse"
-                                                             data-parent="#headerSidebarContent">
-                                                            <ul class="u-header-collapse__nav-list">
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Audio & Video</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Audio & Video</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Televisions</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Headphones</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Speakers</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Audio & Video Accessories</a>
-                                                                </li>
-                                                                <li><span
-                                                                        class="u-header-sidebar__sub-menu-title">Music</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Televisions</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Headphones</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Electro Home Appliances</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- End TV & Audio -->
-
-                                                    <!-- Watches & Eyewear -->
-                                                    <li class="u-has-submenu u-header-collapse__submenu">
-                                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer"
-                                                           href="javascript:;"
-                                                           data-target="#headerSidebarWatchesCollapse" role="button"
-                                                           data-toggle="collapse" aria-expanded="false"
-                                                           aria-controls="headerSidebarWatchesCollapse">
-                                                            Watches & Eyewear
-                                                        </a>
-
-                                                        <div id="headerSidebarWatchesCollapse" class="collapse"
-                                                             data-parent="#headerSidebarContent">
-                                                            <ul class="u-header-collapse__nav-list">
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Watches</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Watches</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Men's Watches</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Women's Watches</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Premium Watches</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Deals on Watches</a></li>
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Eyewear</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Men's Sunglasses</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- End Watches & Eyewear -->
-
-                                                    <!-- Car, Motorbike & Industrial -->
-                                                    <li class="u-has-submenu u-header-collapse__submenu">
-                                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer"
-                                                           href="javascript:;" data-target="#headerSidebarCarCollapse"
-                                                           role="button" data-toggle="collapse" aria-expanded="false"
-                                                           aria-controls="headerSidebarCarCollapse">
-                                                            Car, Motorbike & Industrial
-                                                        </a>
-
-                                                        <div id="headerSidebarCarCollapse" class="collapse"
-                                                             data-parent="#headerSidebarContent">
-                                                            <ul class="u-header-collapse__nav-list">
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Car & Motorbike</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Cars & Bikes</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Car & Bike Care</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Lubricants</a></li>
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Shop for Bike</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Helmets & Gloves</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Bike Parts</a></li>
-                                                                <li><span class="u-header-sidebar__sub-menu-title">Industrial Supplies</span>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Industrial Supplies</a>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Lab & Scientific</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- End Car, Motorbike & Industrial -->
-
-                                                    <!-- Accessories -->
-                                                    <li class="u-has-submenu u-header-collapse__submenu">
-                                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer"
-                                                           href="javascript:;"
-                                                           data-target="#headerSidebarAccessoriesCollapse" role="button"
-                                                           data-toggle="collapse" aria-expanded="false"
-                                                           aria-controls="headerSidebarAccessoriesCollapse">
-                                                            Accessories
-                                                        </a>
-
-                                                        <div id="headerSidebarAccessoriesCollapse" class="collapse"
-                                                             data-parent="#headerSidebarContent">
-                                                            <ul class="u-header-collapse__nav-list">
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Cases</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Chargers</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Headphone Accessories</a>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Headphone Cases</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Headphones</a></li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">All Industrial Supplies</a>
-                                                                </li>
-                                                                <li><a class="u-header-collapse__submenu-nav-link"
-                                                                       href="javascript:;">Lab & Scientific</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <!-- End Accessories -->
                                                 </ul>
                                                 <!-- End List -->
                                             </div>
@@ -858,27 +517,64 @@
                                             class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
                                             <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
                                                 <ul class="navbar-nav u-header__navbar-nav">
-                                                    <li class="nav-item u-header__nav-item"
-                                                        data-event="hover"
-                                                        data-position="left">
-                                                        <a href="javascript:;"
-                                                           class="nav-link u-header__nav-link font-weight-bold">Value of
-                                                            the Day</a>
-                                                    </li>
-                                                    <li class="nav-item u-header__nav-item"
-                                                        data-event="hover"
-                                                        data-position="left">
-                                                        <a href="javascript:;"
-                                                           class="nav-link u-header__nav-link font-weight-bold">Top 100
-                                                            Offers</a>
-                                                    </li>
-                                                    <li class="nav-item u-header__nav-item"
-                                                        data-event="hover"
-                                                        data-position="left">
-                                                        <a href="javascript:;"
-                                                           class="nav-link u-header__nav-link font-weight-bold">New
-                                                            Arrivals</a>
-                                                    </li>
+
+                                                    @foreach($categories as $category)
+                                                        @if($category->parent_id === 0 && $category->child_categories->count() === 0)
+                                                            <li class="nav-item u-header__nav-item"
+                                                                data-event="hover"
+                                                                data-position="left">
+                                                                <a href="javascript:;"
+                                                                   class="nav-link u-header__nav-link font-weight-bold">{{ $category->title }}</a>
+                                                            </li>
+                                                        @else
+                                                            @if($category->parent_id === 0 && $category->child_categories->count() > 0)
+                                                                <li class="nav-item hs-has-mega-menu u-header__nav-item"
+                                                                    data-event="hover"
+                                                                    data-animation-in="slideInUp"
+                                                                    data-animation-out="fadeOut"
+                                                                    data-position="left">
+                                                                    <a id="basicMegaMenu{{$category->id}}"
+                                                                       class="nav-link u-header__nav-link u-header__nav-link-toggle"
+                                                                       href="javascript:;" aria-haspopup="true"
+                                                                       aria-expanded="false">{{ $category->title }}</a>
+
+                                                                    <!-- Nav Item - Mega Menu -->
+                                                                    <div class="hs-mega-menu vmm-tfw u-header__sub-menu"
+                                                                         aria-labelledby="basicMegaMenu{{$category->id}}">
+                                                                        <div class="vmm-bg">
+                                                                            <img class="img-fluid"
+                                                                                 src="../../assets/img/500X400/img1.png"
+                                                                                 alt="Image Description">
+                                                                        </div>
+                                                                        <div class="row u-header__mega-menu-wrapper">
+                                                                            <div class="col mb-3 mb-sm-0">
+                                                                                <span class="u-header__sub-menu-title">{{ $category->title }}</span>
+                                                                                <ul class="u-header__sub-menu-nav-group mb-3">
+                                                                                    @foreach($category->child_categories as $cat)
+                                                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                                                               href="javascript:;">{{ $cat->title }}</a></li>
+                                                                                    @endforeach
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="col mb-3 mb-sm-0">
+                                                                                <span class="u-header__sub-menu-title">Office & Stationery</span>
+                                                                                <ul class="u-header__sub-menu-nav-group">
+                                                                                    <li>
+                                                                                        <a class="nav-link u-header__sub-menu-nav-link"
+                                                                                           href="javascript:;">All Office &
+                                                                                            Stationery</a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End Nav Item - Mega Menu -->
+                                                                </li>
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
+                                                    <!-- Nav Item MegaMenu -->
+
+                                                    <!-- End Nav Item MegaMenu-->
                                                     <!-- Nav Item MegaMenu -->
                                                     <li class="nav-item hs-has-mega-menu u-header__nav-item"
                                                         data-event="hover"
@@ -937,7 +633,6 @@
                                                                         </li>
                                                                     </ul>
                                                                 </div>
-
                                                                 <div class="col mb-3 mb-sm-0">
                                                                     <span class="u-header__sub-menu-title">Office & Stationery</span>
                                                                     <ul class="u-header__sub-menu-nav-group">
@@ -955,42 +650,46 @@
                                                     <!-- Nav Item MegaMenu -->
                                                     <li class="nav-item hs-has-mega-menu u-header__nav-item"
                                                         data-event="hover"
+                                                        data-animation-in="slideInUp"
+                                                        data-animation-out="fadeOut"
                                                         data-position="left">
-                                                        <a id="basicMegaMenu1"
+                                                        <a id="basicMegaMenu"
                                                            class="nav-link u-header__nav-link u-header__nav-link-toggle"
                                                            href="javascript:;" aria-haspopup="true"
-                                                           aria-expanded="false">Cameras, Audio & Video</a>
+                                                           aria-expanded="false">Computers & Accessories</a>
 
                                                         <!-- Nav Item - Mega Menu -->
                                                         <div class="hs-mega-menu vmm-tfw u-header__sub-menu"
-                                                             aria-labelledby="basicMegaMenu1">
+                                                             aria-labelledby="basicMegaMenu">
                                                             <div class="vmm-bg">
                                                                 <img class="img-fluid"
-                                                                     src="../../assets/img/500X400/img4.png"
+                                                                     src="../../assets/img/500X400/img1.png"
                                                                      alt="Image Description">
                                                             </div>
                                                             <div class="row u-header__mega-menu-wrapper">
                                                                 <div class="col mb-3 mb-sm-0">
-                                                                    <span class="u-header__sub-menu-title">Cameras & Photography</span>
+                                                                    <span class="u-header__sub-menu-title">Computers & Accessories</span>
                                                                     <ul class="u-header__sub-menu-nav-group mb-3">
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Lenses</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Camera
+                                                                               href="javascript:;">All Computers &
                                                                                 Accessories</a></li>
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Security &
-                                                                                Surveillance</a></li>
+                                                                               href="javascript:;">Laptops, Desktops &
+                                                                                Monitors</a></li>
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Binoculars &
-                                                                                Telescopes</a></li>
+                                                                               href="javascript:;">Printers & Ink</a>
+                                                                        </li>
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Camcorders</a></li>
+                                                                               href="javascript:;">Networking & Internet
+                                                                                Devices</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Computer
+                                                                                Accessories</a></li>
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link"
                                                                                href="javascript:;">Software</a></li>
@@ -1006,19 +705,13 @@
                                                                         </li>
                                                                     </ul>
                                                                 </div>
-
                                                                 <div class="col mb-3 mb-sm-0">
-                                                                    <span
-                                                                        class="u-header__sub-menu-title">Audio & Video</span>
+                                                                    <span class="u-header__sub-menu-title">Office & Stationery</span>
                                                                     <ul class="u-header__sub-menu-nav-group">
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">All Audio & Video</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Headphones &
-                                                                                Speakers</a></li>
+                                                                               href="javascript:;">All Office &
+                                                                                Stationery</a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -1029,44 +722,49 @@
                                                     <!-- Nav Item MegaMenu -->
                                                     <li class="nav-item hs-has-mega-menu u-header__nav-item"
                                                         data-event="hover"
+                                                        data-animation-in="slideInUp"
+                                                        data-animation-out="fadeOut"
                                                         data-position="left">
-                                                        <a id="basicMegaMenu2"
+                                                        <a id="basicMegaMenu"
                                                            class="nav-link u-header__nav-link u-header__nav-link-toggle"
                                                            href="javascript:;" aria-haspopup="true"
-                                                           aria-expanded="false">Mobiles & Tablets</a>
+                                                           aria-expanded="false">Computers & Accessories</a>
 
                                                         <!-- Nav Item - Mega Menu -->
-                                                        <div
-                                                            class="hs-mega-menu vmm-tfw u-header__sub-menu vmm-bg-extended"
-                                                            aria-labelledby="basicMegaMenu2">
+                                                        <div class="hs-mega-menu vmm-tfw u-header__sub-menu"
+                                                             aria-labelledby="basicMegaMenu">
                                                             <div class="vmm-bg">
                                                                 <img class="img-fluid"
-                                                                     src="../../assets/img/500X400/img3.png"
+                                                                     src="../../assets/img/500X400/img1.png"
                                                                      alt="Image Description">
                                                             </div>
                                                             <div class="row u-header__mega-menu-wrapper">
                                                                 <div class="col mb-3 mb-sm-0">
-                                                                    <span class="u-header__sub-menu-title">Mobiles & Tablets</span>
+                                                                    <span class="u-header__sub-menu-title">Computers & Accessories</span>
                                                                     <ul class="u-header__sub-menu-nav-group mb-3">
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">All Mobile Phones</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Smartphones</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Refurbished
-                                                                                Mobiles</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link border-top pt-2"
-                                                                               href="javascript:;">All Mobile
+                                                                               href="javascript:;">All Computers &
                                                                                 Accessories</a></li>
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Cases & Covers</a>
+                                                                               href="javascript:;">Laptops, Desktops &
+                                                                                Monitors</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Printers & Ink</a>
                                                                         </li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Networking & Internet
+                                                                                Devices</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Computer
+                                                                                Accessories</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Software</a></li>
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start"
                                                                                href="javascript:;">
@@ -1079,16 +777,13 @@
                                                                         </li>
                                                                     </ul>
                                                                 </div>
-
                                                                 <div class="col mb-3 mb-sm-0">
+                                                                    <span class="u-header__sub-menu-title">Office & Stationery</span>
                                                                     <ul class="u-header__sub-menu-nav-group">
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">All Tablets</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Tablet
-                                                                                Accessories</a></li>
+                                                                               href="javascript:;">All Office &
+                                                                                Stationery</a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -1099,133 +794,68 @@
                                                     <!-- Nav Item MegaMenu -->
                                                     <li class="nav-item hs-has-mega-menu u-header__nav-item"
                                                         data-event="hover"
+                                                        data-animation-in="slideInUp"
+                                                        data-animation-out="fadeOut"
                                                         data-position="left">
-                                                        <a id="basicMegaMenu3"
+                                                        <a id="basicMegaMenu"
                                                            class="nav-link u-header__nav-link u-header__nav-link-toggle"
                                                            href="javascript:;" aria-haspopup="true"
-                                                           aria-expanded="false">Movies, Music & Video Game</a>
+                                                           aria-expanded="false">Computers & Accessories</a>
 
                                                         <!-- Nav Item - Mega Menu -->
                                                         <div class="hs-mega-menu vmm-tfw u-header__sub-menu"
-                                                             aria-labelledby="basicMegaMenu3">
+                                                             aria-labelledby="basicMegaMenu">
                                                             <div class="vmm-bg">
                                                                 <img class="img-fluid"
-                                                                     src="../../assets/img/500X400/img2.png"
+                                                                     src="../../assets/img/500X400/img1.png"
                                                                      alt="Image Description">
                                                             </div>
                                                             <div class="row u-header__mega-menu-wrapper">
                                                                 <div class="col mb-3 mb-sm-0">
-                                                                    <span class="u-header__sub-menu-title">Movies & TV Shows</span>
+                                                                    <span class="u-header__sub-menu-title">Computers & Accessories</span>
                                                                     <ul class="u-header__sub-menu-nav-group mb-3">
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">All Movies & TV
-                                                                                Shows</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">All English</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link border-bottom pb-3"
-                                                                               href="javascript:;">All Hindi</a></li>
-                                                                    </ul>
-                                                                    <span
-                                                                        class="u-header__sub-menu-title">Video Games</span>
-                                                                    <ul class="u-header__sub-menu-nav-group">
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">PC Games</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Consoles</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Accessories</a></li>
-                                                                    </ul>
-                                                                </div>
-
-                                                                <div class="col mb-3 mb-sm-0">
-                                                                    <span class="u-header__sub-menu-title">Music</span>
-                                                                    <ul class="u-header__sub-menu-nav-group">
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">All Music</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Indian Classical</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Musical
-                                                                                Instruments</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- End Nav Item - Mega Menu -->
-                                                    </li>
-                                                    <!-- End Nav Item MegaMenu-->
-                                                    <!-- Nav Item MegaMenu -->
-                                                    <li class="nav-item hs-has-mega-menu u-header__nav-item"
-                                                        data-event="hover"
-                                                        data-position="left">
-                                                        <a id="basicMegaMenu4"
-                                                           class="nav-link u-header__nav-link u-header__nav-link-toggle"
-                                                           href="javascript:;" aria-haspopup="true"
-                                                           aria-expanded="false">TV & Audio</a>
-
-                                                        <!-- Nav Item - Mega Menu -->
-                                                        <div class="hs-mega-menu vmm-tfw u-header__sub-menu"
-                                                             aria-labelledby="basicMegaMenu4">
-                                                            <div class="vmm-bg">
-                                                                <img class="img-fluid"
-                                                                     src="../../assets/img/500X400/img5.png"
-                                                                     alt="Image Description">
-                                                            </div>
-                                                            <div class="row u-header__mega-menu-wrapper">
-                                                                <div class="col mb-3 mb-sm-0">
-                                                                    <span
-                                                                        class="u-header__sub-menu-title">Audio & Video</span>
-                                                                    <ul class="u-header__sub-menu-nav-group mb-3">
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">All Audio & Video</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Televisions</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Headphones</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Speakers</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Audio & Video
+                                                                               href="javascript:;">All Computers &
                                                                                 Accessories</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Laptops, Desktops &
+                                                                                Monitors</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Printers & Ink</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Networking & Internet
+                                                                                Devices</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Computer
+                                                                                Accessories</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Software</a></li>
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start"
                                                                                href="javascript:;">
-                                                                                <div class="">Electro Home Appliances
-                                                                                </div>
+                                                                                <div class="">All Electronics</div>
                                                                                 <div
                                                                                     class="u-nav-subtext font-size-11 text-gray-30">
-                                                                                    Available in select cities
+                                                                                    Discover more products
                                                                                 </div>
                                                                             </a>
                                                                         </li>
                                                                     </ul>
                                                                 </div>
-
                                                                 <div class="col mb-3 mb-sm-0">
-                                                                    <span class="u-header__sub-menu-title">Music</span>
+                                                                    <span class="u-header__sub-menu-title">Office & Stationery</span>
                                                                     <ul class="u-header__sub-menu-nav-group">
                                                                         <li>
                                                                             <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Televisions</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Headphones</a></li>
+                                                                               href="javascript:;">All Office &
+                                                                                Stationery</a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -1233,176 +863,293 @@
                                                         <!-- End Nav Item - Mega Menu -->
                                                     </li>
                                                     <!-- End Nav Item MegaMenu-->
-                                                    <!-- Nav Item MegaMenu -->
                                                     <li class="nav-item hs-has-mega-menu u-header__nav-item"
                                                         data-event="hover"
-                                                        data-position="left">
-                                                        <a id="basicMegaMenu5"
-                                                           class="nav-link u-header__nav-link u-header__nav-link-toggle"
-                                                           href="javascript:;" aria-haspopup="true"
-                                                           aria-expanded="false">Watches & Eyewear</a>
-
-                                                        <!-- Nav Item - Mega Menu -->
-                                                        <div class="hs-mega-menu vmm-tfw u-header__sub-menu"
-                                                             aria-labelledby="basicMegaMenu5">
-                                                            <div class="vmm-bg">
-                                                                <img class="img-fluid"
-                                                                     src="../../assets/img/500X400/img6.png"
-                                                                     alt="Image Description">
-                                                            </div>
-                                                            <div class="row u-header__mega-menu-wrapper">
-                                                                <div class="col mb-3 mb-sm-0">
-                                                                    <span
-                                                                        class="u-header__sub-menu-title">Watches</span>
-                                                                    <ul class="u-header__sub-menu-nav-group mb-3">
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">All Watches</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Men's Watches</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Women's Watches</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Premium Watches</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Deals on Watches</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-
-                                                                <div class="col mb-3 mb-sm-0">
-                                                                    <span
-                                                                        class="u-header__sub-menu-title">Eyewear</span>
-                                                                    <ul class="u-header__sub-menu-nav-group">
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Men's Sunglasses</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- End Nav Item - Mega Menu -->
-                                                    </li>
-                                                    <!-- End Nav Item MegaMenu-->
-                                                    <!-- Nav Item MegaMenu -->
-                                                    <li class="nav-item hs-has-mega-menu u-header__nav-item"
-                                                        data-event="hover"
-                                                        data-position="left">
-                                                        <a id="basicMegaMenu3"
-                                                           class="nav-link u-header__nav-link u-header__nav-link-toggle"
-                                                           href="javascript:;" aria-haspopup="true"
-                                                           aria-expanded="false">Car, Motorbike & Industrial</a>
-
-                                                        <!-- Nav Item - Mega Menu -->
-                                                        <div class="hs-mega-menu vmm-tfw u-header__sub-menu"
-                                                             aria-labelledby="basicMegaMenu3">
-                                                            <div class="vmm-bg">
-                                                                <img class="img-fluid"
-                                                                     src="../../assets/img/500X400/img7.png"
-                                                                     alt="Image Description">
-                                                            </div>
-                                                            <div class="row u-header__mega-menu-wrapper">
-                                                                <div class="col mb-3 mb-sm-0">
-                                                                    <span class="u-header__sub-menu-title">Car & Motorbike</span>
-                                                                    <ul class="u-header__sub-menu-nav-group mb-3">
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">All Cars & Bikes</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Car & Bike Care</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link border-bottom pb-3"
-                                                                               href="javascript:;">Lubricants</a></li>
-                                                                    </ul>
-                                                                    <span
-                                                                        class="u-header__sub-menu-title">Shop for Bike</span>
-                                                                    <ul class="u-header__sub-menu-nav-group">
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Helmets & Gloves</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Bike Parts</a></li>
-                                                                    </ul>
-                                                                </div>
-
-                                                                <div class="col mb-3 mb-sm-0">
-                                                                    <span class="u-header__sub-menu-title">Industrial Supplies</span>
-                                                                    <ul class="u-header__sub-menu-nav-group">
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">All Industrial
-                                                                                Supplies</a></li>
-                                                                        <li>
-                                                                            <a class="nav-link u-header__sub-menu-nav-link"
-                                                                               href="javascript:;">Lab & Scientific</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- End Nav Item - Mega Menu -->
-                                                    </li>
-                                                    <!-- End Nav Item MegaMenu-->
-                                                    <!-- Nav Item -->
-                                                    <li class="nav-item hs-has-sub-menu u-header__nav-item"
-                                                        data-event="click"
                                                         data-animation-in="slideInUp"
                                                         data-animation-out="fadeOut"
                                                         data-position="left">
-                                                        <a id="homeMegaMenu"
-                                                           class="nav-link u-header__nav-link u-header__nav-link-toggle u-header__nav-link-toggle"
+                                                        <a id="basicMegaMenu"
+                                                           class="nav-link u-header__nav-link u-header__nav-link-toggle"
                                                            href="javascript:;" aria-haspopup="true"
-                                                           aria-expanded="false" aria-labelledby="homeSubMenu">Accessories</a>
+                                                           aria-expanded="false">Computers & Accessories</a>
 
-                                                        <!-- Home - Submenu -->
-                                                        <ul id="homeSubMenu"
-                                                            class="hs-sub-menu u-header__sub-menu animated hs-position-left fadeOut"
-                                                            aria-labelledby="homeMegaMenu"
-                                                            style="min-width: 230px; display: none;">
-                                                            <!-- Home-v1 -->
-                                                            <li class="hs-has-sub-menu">
-                                                                <a class="nav-link u-header__sub-menu-nav-link "
-                                                                   href="index.html">Home-v1</a>
-                                                            </li>
-                                                            <!-- End Home-v1 -->
-
-                                                            <!-- Home-v2 -->
-                                                            <li class="hs-has-sub-menu">
-                                                                <a class="nav-link u-header__sub-menu-nav-link "
-                                                                   href="home-v2.html">Home-v2</a>
-                                                            </li>
-                                                            <!-- End Home-v2 -->
-
-                                                            <!-- Home-v3 -->
-                                                            <li class="hs-has-sub-menu">
-                                                                <a class="nav-link u-header__sub-menu-nav-link "
-                                                                   href="home-v3.html">Home-v3</a>
-                                                            </li>
-                                                            <!-- End Home-v3 -->
-
-                                                            <!-- Home-v4 -->
-                                                            <li class="hs-has-sub-menu">
-                                                                <a class="nav-link u-header__sub-menu-nav-link "
-                                                                   href="home-v4.html">Home-v4</a>
-                                                            </li>
-                                                            <!-- End Home-v4 -->
-                                                        </ul>
-                                                        <!-- End Home - Submenu -->
+                                                        <!-- Nav Item - Mega Menu -->
+                                                        <div class="hs-mega-menu vmm-tfw u-header__sub-menu"
+                                                             aria-labelledby="basicMegaMenu">
+                                                            <div class="vmm-bg">
+                                                                <img class="img-fluid"
+                                                                     src="../../assets/img/500X400/img1.png"
+                                                                     alt="Image Description">
+                                                            </div>
+                                                            <div class="row u-header__mega-menu-wrapper">
+                                                                <div class="col mb-3 mb-sm-0">
+                                                                    <span class="u-header__sub-menu-title">Computers & Accessories</span>
+                                                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">All Computers &
+                                                                                Accessories</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Laptops, Desktops &
+                                                                                Monitors</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Printers & Ink</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Networking & Internet
+                                                                                Devices</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Computer
+                                                                                Accessories</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Software</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start"
+                                                                               href="javascript:;">
+                                                                                <div class="">All Electronics</div>
+                                                                                <div
+                                                                                    class="u-nav-subtext font-size-11 text-gray-30">
+                                                                                    Discover more products
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col mb-3 mb-sm-0">
+                                                                    <span class="u-header__sub-menu-title">Office & Stationery</span>
+                                                                    <ul class="u-header__sub-menu-nav-group">
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">All Office &
+                                                                                Stationery</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- End Nav Item - Mega Menu -->
                                                     </li>
-                                                    <!-- End Nav Item -->
+                                                    <!-- End Nav Item MegaMenu-->
+                                                    <!-- Nav Item MegaMenu -->
+                                                    <li class="nav-item hs-has-mega-menu u-header__nav-item"
+                                                        data-event="hover"
+                                                        data-animation-in="slideInUp"
+                                                        data-animation-out="fadeOut"
+                                                        data-position="left">
+                                                        <a id="basicMegaMenu"
+                                                           class="nav-link u-header__nav-link u-header__nav-link-toggle"
+                                                           href="javascript:;" aria-haspopup="true"
+                                                           aria-expanded="false">Computers & Accessories</a>
+
+                                                        <!-- Nav Item - Mega Menu -->
+                                                        <div class="hs-mega-menu vmm-tfw u-header__sub-menu"
+                                                             aria-labelledby="basicMegaMenu">
+                                                            <div class="vmm-bg">
+                                                                <img class="img-fluid"
+                                                                     src="../../assets/img/500X400/img1.png"
+                                                                     alt="Image Description">
+                                                            </div>
+                                                            <div class="row u-header__mega-menu-wrapper">
+                                                                <div class="col mb-3 mb-sm-0">
+                                                                    <span class="u-header__sub-menu-title">Computers & Accessories</span>
+                                                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">All Computers &
+                                                                                Accessories</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Laptops, Desktops &
+                                                                                Monitors</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Printers & Ink</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Networking & Internet
+                                                                                Devices</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Computer
+                                                                                Accessories</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Software</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start"
+                                                                               href="javascript:;">
+                                                                                <div class="">All Electronics</div>
+                                                                                <div
+                                                                                    class="u-nav-subtext font-size-11 text-gray-30">
+                                                                                    Discover more products
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col mb-3 mb-sm-0">
+                                                                    <span class="u-header__sub-menu-title">Office & Stationery</span>
+                                                                    <ul class="u-header__sub-menu-nav-group">
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">All Office &
+                                                                                Stationery</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- End Nav Item - Mega Menu -->
+                                                    </li>
+                                                    <!-- End Nav Item MegaMenu-->
+                                                    <!-- Nav Item MegaMenu -->
+                                                    <li class="nav-item hs-has-mega-menu u-header__nav-item"
+                                                        data-event="hover"
+                                                        data-animation-in="slideInUp"
+                                                        data-animation-out="fadeOut"
+                                                        data-position="left">
+                                                        <a id="basicMegaMenu"
+                                                           class="nav-link u-header__nav-link u-header__nav-link-toggle"
+                                                           href="javascript:;" aria-haspopup="true"
+                                                           aria-expanded="false">Computers & Accessories</a>
+
+                                                        <!-- Nav Item - Mega Menu -->
+                                                        <div class="hs-mega-menu vmm-tfw u-header__sub-menu"
+                                                             aria-labelledby="basicMegaMenu">
+                                                            <div class="vmm-bg">
+                                                                <img class="img-fluid"
+                                                                     src="../../assets/img/500X400/img1.png"
+                                                                     alt="Image Description">
+                                                            </div>
+                                                            <div class="row u-header__mega-menu-wrapper">
+                                                                <div class="col mb-3 mb-sm-0">
+                                                                    <span class="u-header__sub-menu-title">Computers & Accessories</span>
+                                                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">All Computers &
+                                                                                Accessories</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Laptops, Desktops &
+                                                                                Monitors</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Printers & Ink</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Networking & Internet
+                                                                                Devices</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Computer
+                                                                                Accessories</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Software</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start"
+                                                                               href="javascript:;">
+                                                                                <div class="">All Electronics</div>
+                                                                                <div
+                                                                                    class="u-nav-subtext font-size-11 text-gray-30">
+                                                                                    Discover more products
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col mb-3 mb-sm-0">
+                                                                    <span class="u-header__sub-menu-title">Office & Stationery</span>
+                                                                    <ul class="u-header__sub-menu-nav-group">
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">All Office &
+                                                                                Stationery</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- End Nav Item - Mega Menu -->
+                                                    </li>
+                                                    <!-- End Nav Item MegaMenu-->
+                                                    <!-- Nav Item MegaMenu -->
+                                                    <li class="nav-item hs-has-mega-menu u-header__nav-item"
+                                                        data-event="hover"
+                                                        data-animation-in="slideInUp"
+                                                        data-animation-out="fadeOut"
+                                                        data-position="left">
+                                                        <a id="basicMegaMenu"
+                                                           class="nav-link u-header__nav-link u-header__nav-link-toggle"
+                                                           href="javascript:;" aria-haspopup="true"
+                                                           aria-expanded="false">Computers & Accessories</a>
+
+                                                        <!-- Nav Item - Mega Menu -->
+                                                        <div class="hs-mega-menu vmm-tfw u-header__sub-menu"
+                                                             aria-labelledby="basicMegaMenu">
+                                                            <div class="vmm-bg">
+                                                                <img class="img-fluid"
+                                                                     src="../../assets/img/500X400/img1.png"
+                                                                     alt="Image Description">
+                                                            </div>
+                                                            <div class="row u-header__mega-menu-wrapper">
+                                                                <div class="col mb-3 mb-sm-0">
+                                                                    <span class="u-header__sub-menu-title">Computers & Accessories</span>
+                                                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">All Computers &
+                                                                                Accessories</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Laptops, Desktops &
+                                                                                Monitors</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Printers & Ink</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Networking & Internet
+                                                                                Devices</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Computer
+                                                                                Accessories</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">Software</a></li>
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link u-nav-divider border-top pt-2 flex-column align-items-start"
+                                                                               href="javascript:;">
+                                                                                <div class="">All Electronics</div>
+                                                                                <div
+                                                                                    class="u-nav-subtext font-size-11 text-gray-30">
+                                                                                    Discover more products
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col mb-3 mb-sm-0">
+                                                                    <span class="u-header__sub-menu-title">Office & Stationery</span>
+                                                                    <ul class="u-header__sub-menu-nav-group">
+                                                                        <li>
+                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                               href="javascript:;">All Office &
+                                                                                Stationery</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- End Nav Item - Mega Menu -->
+                                                    </li>
+                                                    <!-- End Nav Item MegaMenu-->
                                                 </ul>
                                             </div>
                                         </nav>

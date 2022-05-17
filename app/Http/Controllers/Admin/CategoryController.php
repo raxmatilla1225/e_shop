@@ -42,8 +42,11 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
+
         $category = new Category();
-        $category->title_en = $request->get('title_en');
+       if($category->title_en){
+           $category->title_en  = $request->get('title_en') ;
+       }
         $category->title_ru = $request->get('title_ru');
         $category->title_uz = $request->get('title_uz');
         $category->slug = Str::slug($request->get('title_en'));
