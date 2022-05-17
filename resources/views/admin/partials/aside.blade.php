@@ -78,6 +78,18 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{route('status.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/status*')) active @endif">
+                                <i class="fas fa-dice-one nav-icon"></i>
+                                <p>{{__('status.status')}}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('types.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/type*')) active @endif">
+                                <i class="fas fa-lightbulb nav-icon"></i>
+                                <p>{{__('type.type')}}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{route('categories.index')}}" class="nav-link @if(\Illuminate\Support\Facades\Request::is('admin/categories*')) active @endif">
 
                                 <i class="nav-icon fas fa-list"></i>
