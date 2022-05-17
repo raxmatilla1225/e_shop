@@ -12,11 +12,11 @@
                     <div class="topbar-right ml-auto">
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
-                                <a href="../home/contact-v2.html" class="u-header-topbar__nav-link"><i
+                                <a href="{{route('contact')}}" class="u-header-topbar__nav-link"><i
                                         class="ec ec-map-pointer mr-1"></i> Store Locator</a>
                             </li>
                             <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
-                                <a href="../shop/track-your-order.html" class="u-header-topbar__nav-link"><i
+                                <a href="{{route('order')}}" class="u-header-topbar__nav-link"><i
                                         class="ec ec-transport mr-1"></i> Track Your Order</a>
                             </li>
                             <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border u-header-topbar__nav-item-no-border u-header-topbar__nav-item-border-single">
@@ -89,7 +89,7 @@
                             class="navbar navbar-expand u-header__navbar py-0 justify-content-xl-between max-width-270 min-width-270">
                             <!-- Logo -->
                             <a class="order-1 order-xl-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-center"
-                               href="../home/index.html" aria-label="Electro">
+                               href="{{route('home')}}" aria-label="Electro">
                                 <svg version="1.1" x="0px" y="0px" width="175.748px" height="42.52px"
                                      viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52"
                                      style="margin-bottom: 0;">
@@ -726,11 +726,11 @@
                                     <!-- End Input -->
                                 </li>
                                 <!-- End Search -->
-                                <li class="col d-none d-xl-block"><a href="../shop/compare.html" class="text-gray-90"
+                                <li class="col d-none d-xl-block"><a href="{{route('compare')}}" class="text-gray-90"
                                                                      data-toggle="tooltip" data-placement="top"
                                                                      title="Compare"><i
                                             class="font-size-22 ec ec-compare"></i></a></li>
-                                <li class="col d-none d-xl-block"><a href="../shop/wishlist.html" class="text-gray-90"
+                                <li class="col d-none d-xl-block"><a href="{{route('wishlist')}}" class="text-gray-90"
                                                                      data-toggle="tooltip" data-placement="top"
                                                                      title="Favorites"><i
                                             class="font-size-22 ec ec-favorites"></i></a></li>
@@ -810,10 +810,10 @@
                                             </li>
                                         </ul>
                                         <div class="flex-center-between px-4 pt-2">
-                                            <a href="../shop/cart.html"
+                                            <a href="{{route('cart')}}"
                                                class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5">View
                                                 cart</a>
-                                            <a href="../shop/checkout.html"
+                                            <a href="{{route('checkout')}}"
                                                class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5">Checkout</a>
                                         </div>
                                     </div>
