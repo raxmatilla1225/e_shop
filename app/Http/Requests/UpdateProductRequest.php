@@ -97,10 +97,6 @@ class UpdateProductRequest extends FormRequest
                 'required',
                 'integer'
             ],
-            'slug'=> [
-                'required',
-                'string'
-            ],
             'main_img'=> [
                 'required',
                 'max:20000',

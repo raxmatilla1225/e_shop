@@ -226,7 +226,7 @@
                         @enderror
 
                         <div class="col-md-6">
-                            <x-a-l-input value="{{ old('delivery_days') }}" placeholder=" {{__('product.delivery_days')}}" type="text" name="delivery_days" id="delivery_days" label="{{__('product.delivery_days')}}"></x-a-l-input>
+                            <x-a-l-input value="{{ old('delivery_days') }}" placeholder=" Enter {{__('product.delivery_days')}} example:2020.05.05" type="text" name="delivery_days" id="delivery_days" label="{{__('product.delivery_days')}}"></x-a-l-input>
                         </div>
                         @error('delivery_days')
                         <div class="alert alert-danger">{{ $message }}</div>

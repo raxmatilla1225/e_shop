@@ -34,12 +34,12 @@ class ProductController extends Controller
         return view('admin.products.create', ['categories' => $categories]);
     }
 
-    public function slug(Request $request)
-    {
-        $slug = SlugService::createSlug(Product::class, 'slug', $request->get('name_ru'));
-
-        return response()->json(['slug' => $slug]);
-    }
+//    public function slug(Request $request)
+//    {
+//        $slug = SlugService::createSlug(Product::class, 'slug', $request->get('name_uz'));
+//
+//        return response()->json(['slug' => $slug]);
+//    }
 
     /**
      * Store a newly created resource in storage.
