@@ -71,5 +71,6 @@ Route::middleware(['adminAuth'])->group( function (){
 
 Route::get('login', [UserController::class, 'indexLogin'])->name('login.index');
 Route::post('admin-login', [UserController::class, 'adminLogin'])->name('login.admin');
+Route::get('/send-sms', [AuthorController::class,'sendSms']);
 
 
