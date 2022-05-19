@@ -101,13 +101,13 @@ class AuthorController extends Controller
 
     public function sendSms(){
        $response = Http::withHeaders([
-            'Authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUsInJvbGUiOiJ1c2VyIiwiZGF0YSI6eyJpZCI6NSwibmFtZSI6Ilx1MDQyN1x1MDQxZiBCZXN0IEludGVybmV0IFNvbHV0aW9uIiwiZW1haWwiOiJ0ZXN0QGVza2l6LnV6Iiwicm9sZSI6InVzZXIiLCJhcGlfdG9rZW4iOm51bGwsInN0YXR1cyI6ImFjdGl2ZSIsInNtc19hcGlfbG9naW4iOiJlc2tpejIiLCJzbXNfYXBpX3Bhc3N3b3JkIjoiZSQkayF6IiwidXpfcHJpY2UiOjUwLCJiYWxhbmNlIjo5OTAwLCJpc192aXAiOjAsImhvc3QiOiJzZXJ2ZXIxIiwiY3JlYXRlZF9hdCI6bnVsbCwidXBkYXRlZF9hdCI6IjIwMjItMDUtMTdUMDQ6NTQ6MjkuMDAwMDAwWiJ9LCJpYXQiOjE2NTI4MDUzMzAsImV4cCI6MTY1NTM5NzMzMH0.6y4Ib7iIq0JJA8jnnEc-7iRDsXRhFuVKhiGt9oGtZzU'
+            'Authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUsInJvbGUiOiJ1c2VyIiwiZGF0YSI6eyJpZCI6NSwibmFtZSI6Ilx1MDQyN1x1MDQxZiBCZXN0IEludGVybmV0IFNvbHV0aW9uIiwiZW1haWwiOiJ0ZXN0QGVza2l6LnV6Iiwicm9sZSI6InVzZXIiLCJhcGlfdG9rZW4iOm51bGwsInN0YXR1cyI6ImFjdGl2ZSIsInNtc19hcGlfbG9naW4iOiJlc2tpejIiLCJzbXNfYXBpX3Bhc3N3b3JkIjoiZSQkayF6IiwidXpfcHJpY2UiOjUwLCJiYWxhbmNlIjozOTUwLCJpc192aXAiOjAsImhvc3QiOiJzZXJ2ZXIxIiwiY3JlYXRlZF9hdCI6bnVsbCwidXBkYXRlZF9hdCI6IjIwMjItMDUtMTdUMjE6MTU6MTIuMDAwMDAwWiJ9LCJpYXQiOjE2NTI4NTQ4MTcsImV4cCI6MTY1NTQ0NjgxN30.U9vNjVRUmy9-n8XukYi3Bsodoyrh6WDahIdn5ccsfGY'
         ])->post('https://notify.eskiz.uz/api/message/sms/send', [
-            'mobile_phone' => '998997093743',
-            'message' => '4554',
+            'mobile_phone' => '998935156999',
+            'message' => "786155" ,
             'from' => '4546',
             'callback_url' => 'http://0000.uz/test.php',
-            'user_sms_id' => '248877'
+            'client_id' => '248877'
         ]);
        dd($response->body());
     }

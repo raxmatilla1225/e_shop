@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +44,12 @@ Route::get('language/{locale}', function ($locale) {
     }
     return redirect()->back();
 })->name('language');
+Route::get('/account', function (){
+    dd("Your account");
+})->middleware('authClient');
+Route::post('register', [AuthController::class, 'register'])->name('auth.register');
+Route::post('login', [AuthController::class, 'login'])->name('auth.login');
+Route::post('confirm', [AuthController::class, 'confirm'])->name('auth.confirm');
 
 
 

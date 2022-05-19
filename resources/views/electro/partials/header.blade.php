@@ -66,8 +66,8 @@
                                    data-unfold-animation-in="fadeInRight"
                                    data-unfold-animation-out="fadeOutRight"
                                    data-unfold-duration="500">
-                                    <i class="ec ec-user mr-1"></i> Register <span class="text-gray-50">or</span> Sign
-                                    in
+                                    <i class="ec ec-user mr-1"></i> Register <span class="text-gray-50">or</span> @auth('client') My account @else Sing in @endauth
+
                                 </a>
                                 <!-- End Account Sidebar Toggle Button -->
                             </li>

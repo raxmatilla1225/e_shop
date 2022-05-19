@@ -25,7 +25,10 @@
                 <!-- Content -->
                 <div class="js-scrollbar u-sidebar__body">
                     <div class="u-sidebar__content u-header-sidebar__content">
-                        <form class="js-validate">
+{{-------------------------------login-form-----------------------------}}
+                        <form class="js-validate" action="{{route('auth.login')}}" method="POST">
+                            @method('POST')
+                            @csrf
                             <!-- Login -->
                             <div id="login" data-target-group="idForm">
                                 <!-- Title -->
@@ -38,15 +41,17 @@
                                 <!-- Form Group -->
                                 <div class="form-group">
                                     <div class="js-form-message js-focus-state">
-                                        <label class="sr-only" for="signinEmail">Email</label>
+                                        <label class="sr-only" for="signinEmail">Username</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                         <span class="input-group-text" id="signinEmailLabel">
                                                             <span class="fas fa-user"></span>
                                                         </span>
                                             </div>
-                                            <input type="email" class="form-control" name="email" id="signinEmail" placeholder="Email" aria-label="Email" aria-describedby="signinEmailLabel" required
-                                                   data-msg="Please enter a valid email address."
+                                            <input type="text" class="form-control" name="username" id="signinEmail"
+                                                   placeholder="Username" aria-label="Username"
+                                                   aria-describedby="signinEmailLabel" required
+                                                   data-msg="Please enter Username."
                                                    data-error-class="u-has-error"
                                                    data-success-class="u-has-success">
                                         </div>
@@ -64,7 +69,9 @@
                                                         <span class="fas fa-lock"></span>
                                                     </span>
                                             </div>
-                                            <input type="password" class="form-control" name="password" id="signinPassword" placeholder="Password" aria-label="Password" aria-describedby="signinPasswordLabel" required
+                                            <input type="password" class="form-control" name="password"
+                                                   id="signinPassword" placeholder="Password" aria-label="Password"
+                                                   aria-describedby="signinPasswordLabel" required
                                                    data-msg="Your password is invalid. Please try again."
                                                    data-error-class="u-has-error"
                                                    data-success-class="u-has-success">
@@ -81,8 +88,12 @@
                                 </div>
 
                                 <div class="mb-2">
-                                    <button type="submit" class="btn btn-block btn-sm btn-primary transition-3d-hover">Login</button>
+                                    <button type="submit" class="btn btn-block btn-sm btn-primary transition-3d-hover">
+                                        Login
+                                    </button>
                                 </div>
+
+                                <form action=""></form>
 
                                 <div class="text-center mb-4">
                                     <span class="small text-muted">Do not have an account?</span>
@@ -99,17 +110,29 @@
 
                                 <!-- Login Buttons -->
                                 <div class="d-flex">
-                                    <a class="btn btn-block btn-sm btn-soft-facebook transition-3d-hover mr-1" href="javascript:;">
+                                    <a class="btn btn-block btn-sm btn-soft-facebook transition-3d-hover mr-1"
+                                       href="javascript:;">
                                         <span class="fab fa-facebook-square mr-1"></span>
                                         Facebook
                                     </a>
-                                    <a class="btn btn-block btn-sm btn-soft-google transition-3d-hover ml-1 mt-0" href="javascript:;">
+                                    <a class="btn btn-block btn-sm btn-soft-google transition-3d-hover ml-1 mt-0"
+                                       href="javascript:;">
                                         <span class="fab fa-google mr-1"></span>
                                         Google
                                     </a>
                                 </div>
                                 <!-- End Login Buttons -->
                             </div>
+
+                        </form>
+{{-------------------------------end-login-form-----------------------------}}
+
+{{------------------------------------------------------------------------------------------------------------------------}}
+
+{{--------------------------------register-form-----------------------------}}
+                        <form class="js-validate" action="{{route('auth.register')}}" method="POST">
+                        @method('POST')
+                        @csrf
 
                             <!-- Signup -->
                             <div id="signup" style="display: none; opacity: 0;" data-target-group="idForm">
@@ -123,15 +146,38 @@
                                 <!-- Form Group -->
                                 <div class="form-group">
                                     <div class="js-form-message js-focus-state">
-                                        <label class="sr-only" for="signupEmail">Email</label>
+                                        <label class="sr-only" for="signupEmail">Username</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                         <span class="input-group-text" id="signupEmailLabel">
                                                             <span class="fas fa-user"></span>
                                                         </span>
                                             </div>
-                                            <input type="email" class="form-control" name="email" id="signupEmail" placeholder="Email" aria-label="Email" aria-describedby="signupEmailLabel" required
-                                                   data-msg="Please enter a valid email address."
+                                            <input type="text" class="form-control" name="username" id="signupEmail"
+                                                   placeholder="username" aria-label="Username"
+                                                   aria-describedby="signupEmailLabel" required
+                                                   data-msg="Please enter you username."
+                                                   data-error-class="u-has-error"
+                                                   data-success-class="u-has-success">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Input -->
+
+                                <!-- Form Group -->
+                                <div class="form-group">
+                                    <div class="js-form-message js-focus-state">
+                                        <label class="sr-only" for="signupEmail">Phone</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="signupEmailLabel">
+                                                            <span class="fas fa-phone"></span>
+                                                        </span>
+                                            </div>
+                                            <input type="tel" class="form-control" name="phone" id="signupEmail"
+                                                   placeholder="phone" aria-label="Phone"
+                                                   aria-describedby="signupEmailLabel" required
+                                                   data-msg="Please enter you phone."
                                                    data-error-class="u-has-error"
                                                    data-success-class="u-has-success">
                                         </div>
@@ -149,7 +195,9 @@
                                                             <span class="fas fa-lock"></span>
                                                         </span>
                                             </div>
-                                            <input type="password" class="form-control" name="password" id="signupPassword" placeholder="Password" aria-label="Password" aria-describedby="signupPasswordLabel" required
+                                            <input type="password" class="form-control" name="password"
+                                                   id="signupPassword" placeholder="Password" aria-label="Password"
+                                                   aria-describedby="signupPasswordLabel" required
                                                    data-msg="Your password is invalid. Please try again."
                                                    data-error-class="u-has-error"
                                                    data-success-class="u-has-success">
@@ -168,7 +216,10 @@
                                                         <span class="fas fa-key"></span>
                                                     </span>
                                             </div>
-                                            <input type="password" class="form-control" name="confirmPassword" id="signupConfirmPassword" placeholder="Confirm Password" aria-label="Confirm Password" aria-describedby="signupConfirmPasswordLabel" required
+                                            <input type="password" class="form-control" name="confirmPassword"
+                                                   id="signupConfirmPassword" placeholder="Confirm Password"
+                                                   aria-label="Confirm Password"
+                                                   aria-describedby="signupConfirmPasswordLabel" required
                                                    data-msg="Password does not match the confirm password."
                                                    data-error-class="u-has-error"
                                                    data-success-class="u-has-success">
@@ -178,7 +229,9 @@
                                 <!-- End Input -->
 
                                 <div class="mb-2">
-                                    <button type="submit" class="btn btn-block btn-sm btn-primary transition-3d-hover">Get Started</button>
+                                    <button type="submit" class="btn btn-block btn-sm btn-primary transition-3d-hover">
+                                        Get Started
+                                    </button>
                                 </div>
 
                                 <div class="text-center mb-4">
@@ -196,11 +249,13 @@
 
                                 <!-- Login Buttons -->
                                 <div class="d-flex">
-                                    <a class="btn btn-block btn-sm btn-soft-facebook transition-3d-hover mr-1" href="javascript:;">
+                                    <a class="btn btn-block btn-sm btn-soft-facebook transition-3d-hover mr-1"
+                                       href="javascript:;">
                                         <span class="fab fa-facebook-square mr-1"></span>
                                         Facebook
                                     </a>
-                                    <a class="btn btn-block btn-sm btn-soft-google transition-3d-hover ml-1 mt-0" href="javascript:;">
+                                    <a class="btn btn-block btn-sm btn-soft-google transition-3d-hover ml-1 mt-0"
+                                       href="javascript:;">
                                         <span class="fab fa-google mr-1"></span>
                                         Google
                                     </a>
@@ -228,7 +283,9 @@
                                                             <span class="fas fa-user"></span>
                                                         </span>
                                             </div>
-                                            <input type="email" class="form-control" name="email" id="recoverEmail" placeholder="Your email" aria-label="Your email" aria-describedby="recoverEmailLabel" required
+                                            <input type="email" class="form-control" name="email" id="recoverEmail"
+                                                   placeholder="Your email" aria-label="Your email"
+                                                   aria-describedby="recoverEmailLabel" required
                                                    data-msg="Please enter a valid email address."
                                                    data-error-class="u-has-error"
                                                    data-success-class="u-has-success">
@@ -238,7 +295,9 @@
                                 <!-- End Form Group -->
 
                                 <div class="mb-2">
-                                    <button type="submit" class="btn btn-block btn-sm btn-primary transition-3d-hover">Recover Password</button>
+                                    <button type="submit" class="btn btn-block btn-sm btn-primary transition-3d-hover">
+                                        Recover Password
+                                    </button>
                                 </div>
 
                                 <div class="text-center mb-4">
@@ -252,6 +311,8 @@
                             </div>
                             <!-- End Forgot Password -->
                         </form>
+{{--------------------------------end-register-form-----------------------------}}
+
                     </div>
                 </div>
                 <!-- End Content -->

@@ -37,7 +37,7 @@
 
 @include('electro.partials.footer')
 
-{{--@include('electro.partials.aside')--}}
+@include('electro.partials.aside')
 
 <!-- Go to Top -->
 <a class="js-go-to u-go-to" href="javascript:;"
