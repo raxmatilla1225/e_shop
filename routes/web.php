@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ClientController;
+use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +29,6 @@ Route::view('/cart', 'electro/shop/cart')->name('cart');
 Route::view('/checkout', 'electro/shop/checkout')->name('checkout');
 Route::view('/shop', 'electro/shop/shop')->name('shop');
 Route::view('/single_product', 'electro/shop/single_product')->name('single.product');
-Route::view('/my_account', 'electro/shop/my_account')->name('my.account');
 Route::view('/terms_&_conditions', 'electro/shop/terms_&_conditions')->name('terms.&.conditions');
 Route::view('/faq', 'electro/shop/faq')->name('faq');
 
@@ -44,12 +43,19 @@ Route::get('language/{locale}', function ($locale) {
     }
     return redirect()->back();
 })->name('language');
-Route::get('/account', function (){
-    dd("Your account");
-})->middleware('authClient');
+
+Route::middleware(['clientAuth'])->group( function () {
+//    Route::get('product/search', [ClientController::class, 'search'])->name('product.search');
+    Route::get('/my_account', [ClientController::class, 'my_account'])->name('my_account');
+});
+
+//Route::get('/account', function (){
+//    dd("Your account");
+//})->middleware('clientAuth');
+
 Route::post('register', [AuthController::class, 'register'])->name('auth.register');
 Route::post('login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('confirm', [AuthController::class, 'confirm'])->name('auth.confirm');
-
 
 

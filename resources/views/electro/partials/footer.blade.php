@@ -311,7 +311,7 @@
                             <h6 class="mb-3 font-weight-bold">Customer Care</h6>
                             <!-- List Group -->
                             <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                <li><a class="list-group-item list-group-item-action" href="{{route('my.account')}}">My Account</a></li>
+{{--                                <li><a class="list-group-item list-group-item-action" href="{{route('my.account')}}">My Account</a></li>--}}
                                 <li><a class="list-group-item list-group-item-action" href="{{route('order')}}">Order Tracking</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="{{route('wishlist')}}">Wish List</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="{{route('terms.&.conditions')}}">Customer Service</a></li>

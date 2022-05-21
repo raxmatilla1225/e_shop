@@ -58,7 +58,23 @@
                                    data-unfold-animation-in="fadeInRight"
                                    data-unfold-animation-out="fadeOutRight"
                                    data-unfold-duration="500">
-                                    <i class="ec ec-user mr-1"></i> Register <span class="text-gray-50">or</span> Sign in
+                                    <i class="ec ec-user mr-1"></i>
+                                    @auth('client')
+                                        <a href="{{ route('my_account') }}"
+                                           class="text-sm text-gray-700 dark:text-gray-500 underline">My account</a>
+                                    @else
+                                        Sing in
+                                    @endauth
+
+
+                                    <span class="text-gray-50">or</span>
+
+                                    @auth('client')
+                                        <a href="{{ route('logout') }}"
+                                           class="text-sm text-gray-700 dark:text-gray-500 underline">Logout</a>
+                                    @else
+                                        Register
+                                    @endauth
                                 </a>
                                 <!-- End Account Sidebar Toggle Button -->
                             </li>

@@ -17,7 +17,7 @@ class ClientAuth
     public function handle(Request $request, Closure $next)
     {
         if(!\Auth::guard('client')->check()){
-           return redirect()->route('home');
+           return redirect()->route('home')->with('error', 'You are not logged in yet');
         }
         return $next($request);
     }

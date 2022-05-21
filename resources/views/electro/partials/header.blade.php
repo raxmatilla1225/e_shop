@@ -1,5 +1,8 @@
 <!-- ========== HEADER ========== -->
 <header id="header" class="u-header u-header-left-aligned-nav">
+
+
+
     <div class="u-header__section">
         <!-- Topbar -->
         <div class="u-header-topbar py-2 d-none d-xl-block">
@@ -66,17 +69,53 @@
                                    data-unfold-animation-in="fadeInRight"
                                    data-unfold-animation-out="fadeOutRight"
                                    data-unfold-duration="500">
-                                    <i class="ec ec-user mr-1"></i> Register <span class="text-gray-50">or</span> @auth('client') My account @else Sing in @endauth
+                                    <i class="ec ec-user mr-1"></i>
+
+                                    @auth('client')
+                                        <a href="{{ route('my_account') }}"
+                                           class="text-sm text-gray-700 dark:text-gray-500 underline">My account</a>
+                                    @else
+                                        Sing in
+                                    @endauth
+
+
+                            <span class="text-gray-50">or</span>
+
+                                    @auth('client')
+                                        <a href="{{ route('logout') }}"
+                                           class="text-sm text-gray-700 dark:text-gray-500 underline">Logout</a>
+                                    @else
+                                        Register
+                                    @endauth
 
                                 </a>
                                 <!-- End Account Sidebar Toggle Button -->
-                            </li>
+                                </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End Topbar -->
+
+        @if (session('error'))
+
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{ session('error') }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+        @if (session('success'))
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ session('success') }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+    @endif
 
         <!-- Logo-Search-header-icons -->
         <div class="py-2 py-xl-5 bg-primary-down-lg">
@@ -245,30 +284,32 @@
                                                             </li>
                                                         @else
                                                             @if($category->parent_id === 0 && $category->child_categories->count() > 0)
-                                                            <li class="u-has-submenu u-header-collapse__submenu">
-                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold   "
-                                                                   href="javascript:;"
-                                                                   data-target="#headerSidebarComputersCollapse{{$category->id}}"
-                                                                   role="button" data-toggle="collapse"
-                                                                   aria-expanded="false"
-                                                                   aria-controls="headerSidebarComputersCollapse{{$category->id}}">
-                                                                    {{ $category->title }}
-                                                                </a>
-                                                                <div id="headerSidebarComputersCollapse{{$category->id}}"
-                                                                     class="collapse"
-                                                                     data-parent="#headerSidebarContent">
-                                                                    <ul class="u-header-collapse__nav-list">
-                                                                        @foreach($category->child_categories as $cat)
-                                                                            <li class=""><a
-                                                                                    class="u-header-collapse__submenu-nav-link"
-                                                                                    href="javascript:;">{{ $cat->title }}</a></li>
-                                                                        @endforeach
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
+                                                                <li class="u-has-submenu u-header-collapse__submenu">
+                                                                    <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold   "
+                                                                       href="javascript:;"
+                                                                       data-target="#headerSidebarComputersCollapse{{$category->id}}"
+                                                                       role="button" data-toggle="collapse"
+                                                                       aria-expanded="false"
+                                                                       aria-controls="headerSidebarComputersCollapse{{$category->id}}">
+                                                                        {{ $category->title }}
+                                                                    </a>
+                                                                    <div
+                                                                        id="headerSidebarComputersCollapse{{$category->id}}"
+                                                                        class="collapse"
+                                                                        data-parent="#headerSidebarContent">
+                                                                        <ul class="u-header-collapse__nav-list">
+                                                                            @foreach($category->child_categories as $cat)
+                                                                                <li class=""><a
+                                                                                        class="u-header-collapse__submenu-nav-link"
+                                                                                        href="javascript:;">{{ $cat->title }}</a>
+                                                                                </li>
+                                                                            @endforeach
+                                                                        </ul>
+                                                                    </div>
+                                                                </li>
                                                         @endif
                                                     @endif
-                                                   @endforeach
+                                                @endforeach
                                                 <!-- Value of the Day -->
                                                     <li class="">
                                                         <a class="u-header-collapse__nav-link font-weight-bold"
@@ -548,11 +589,14 @@
                                                                         </div>
                                                                         <div class="row u-header__mega-menu-wrapper">
                                                                             <div class="col mb-3 mb-sm-0">
-                                                                                <span class="u-header__sub-menu-title">{{ $category->title }}</span>
+                                                                                <span
+                                                                                    class="u-header__sub-menu-title">{{ $category->title }}</span>
                                                                                 <ul class="u-header__sub-menu-nav-group mb-3">
                                                                                     @foreach($category->child_categories as $cat)
-                                                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
-                                                                                               href="javascript:;">{{ $cat->title }}</a></li>
+                                                                                        <li>
+                                                                                            <a class="nav-link u-header__sub-menu-nav-link"
+                                                                                               href="javascript:;">{{ $cat->title }}</a>
+                                                                                        </li>
                                                                                     @endforeach
                                                                                 </ul>
                                                                             </div>
@@ -561,7 +605,8 @@
                                                                                 <ul class="u-header__sub-menu-nav-group">
                                                                                     <li>
                                                                                         <a class="nav-link u-header__sub-menu-nav-link"
-                                                                                           href="javascript:;">All Office &
+                                                                                           href="javascript:;">All
+                                                                                            Office &
                                                                                             Stationery</a></li>
                                                                                 </ul>
                                                                             </div>
@@ -569,10 +614,10 @@
                                                                     </div>
                                                                     <!-- End Nav Item - Mega Menu -->
                                                                 </li>
-                                                            @endif
                                                         @endif
-                                                    @endforeach
-                                                    <!-- Nav Item MegaMenu -->
+                                                    @endif
+                                                @endforeach
+                                                <!-- Nav Item MegaMenu -->
 
                                                     <!-- End Nav Item MegaMenu-->
                                                     <!-- Nav Item MegaMenu -->

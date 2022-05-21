@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -59,9 +60,11 @@ class AuthController extends Controller
         }
         if ($sms == $request['confirm_code']){
             Messages::where('phone', $request['phone'])->update(['verification' => 1]);
-            return 'Регистрация прошла успешно';
+            Client::where('phone_number', $request['phone'])->update(['verification' => 1]);
+            return redirect()->route('home')
+                ->with('success','Registration completed successfully.');
         }else{
-            return 'код подтверждения не верный';
+            return redirect()->back()->with('verification code is not correct');
         }
     }
 
@@ -71,17 +74,43 @@ class AuthController extends Controller
         $inputVal = $request->all();
 
         $this->validate($request, [
-            'username' => 'required|email',
+            'username' => 'required',
             'password' => 'required',
         ]);
-
-        if(auth('client')->attempt(array('username' => $inputVal['username'], 'password' => $inputVal['password']))){
-            return redirect()->route('contact')
-                ->with('success');
-        }else{
-            return redirect()->route('login')
-                ->with('error','Email & Password are incorrect.');
+        $c = Client::where('username', $request['username'])->get('verification');
+        foreach ($c as $item) {
+            $code = $item['verification'];
         }
+
+        if (Client::where('username',$request['username'])->count()){
+            if ($code == 1){
+                if(auth('client')->attempt(array('username' => $inputVal['username'], 'password' => $inputVal['password']))){
+                    return redirect()->route('home')
+                        ->with('success','You are logged in');
+                }else{
+                    return redirect()->route('home')
+                        ->with('error','Email & Password are incorrect.');
+                }
+            }else{
+                return redirect()->route('home')
+                    ->with('error','You have not been verified.');
+            }
+        }else{
+            return redirect()->route('home')
+                ->with('error','Client under this name '.$request['username'].'  is not registered.');
+        }
+
+
+
+    }
+
+    public function logout()
+    {
+        Session::flush();
+
+        Auth::guard('client')->logout();
+
+        return redirect()->route('home')->with('error','You are logged out');
     }
 
 
