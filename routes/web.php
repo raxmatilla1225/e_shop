@@ -56,6 +56,11 @@ Route::middleware(['clientAuth'])->group( function () {
 Route::post('register', [AuthController::class, 'register'])->name('auth.register');
 Route::post('login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
 Route::post('confirm', [AuthController::class, 'confirm'])->name('auth.confirm');
+
+Route::post('confirm_recover', [AuthController::class, 'confirm_recover'])->name('auth.confirm_recover');
+Route::post('recover', [AuthController::class, 'recover'])->name('auth.recover');
+Route::post('update_password', [AuthController::class, 'update_password'])->name('auth.update_password');
 
 

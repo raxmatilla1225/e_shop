@@ -9,7 +9,7 @@
 {{--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">--}}
 
 {{--</head>--}}
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Title -->
@@ -39,44 +39,62 @@
     <!-- CSS Electro Template -->
     <link rel="stylesheet" href="{{asset('assets/css/theme.css')}}">
 </head>
-
 <body style="display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;">
-
 <div class="row">
     <div class="container">
-
-        <form action="{{route('auth.confirm')}}" method="post">
+        <form class="js-validate" action="{{route('auth.update_password')}}" method="post">
             @method('POST')
             @csrf
 
-            @if (session('error'))
-
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong>{{ session('error') }}</strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            @endif
-            @if (session('success'))
-
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>{{ session('success') }}</strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            @endif
-
             <div class="form-group">
-                <label for="exampleInputEmail1">To the specified number {{$phone}}, a confirmation code was sent</label>
+                <label for="exampleInputEmail1">Entering a new password</label>
                 <input type="hidden" name="phone" value="{{$phone}}">
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                       name="confirm_code">
-                <small id="emailHelp" class="form-text text-muted">Enter the code for successful registration</small>
+                <!-- Form Group -->
+                <div class="form-group">
+                    <div class="js-form-message js-focus-state">
+                        <label class="sr-only" for="signupPassword">Password</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="signupPasswordLabel">
+                                                            <span class="fas fa-lock"></span>
+                                                        </span>
+                            </div>
+                            <input type="password" class="form-control" name="password"
+                                   id="signupPassword" placeholder="Password" aria-label="Password"
+                                   aria-describedby="signupPasswordLabel" required
+                                   data-msg="Your password is invalid. Please try again."
+                                   data-error-class="u-has-error"
+                                   data-success-class="u-has-success">
+                        </div>
+                    </div>
+                </div>
+                <!-- End Input -->
+
+                <!-- Form Group -->
+                <div class="form-group">
+                    <div class="js-form-message js-focus-state">
+                        <label class="sr-only" for="signupConfirmPassword">Confirm Password</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="signupConfirmPasswordLabel">
+                                                        <span class="fas fa-key"></span>
+                                                    </span>
+                            </div>
+                            <input type="password" class="form-control" name="confirmPassword"
+                                   id="signupConfirmPassword" placeholder="Confirm Password"
+                                   aria-label="Confirm Password"
+                                   aria-describedby="signupConfirmPasswordLabel" required
+                                   data-msg="Password does not match the confirm password."
+                                   data-error-class="u-has-error"
+                                   data-success-class="u-has-success">
+                        </div>
+                    </div>
+                </div>
+                <!-- End Input -->
+{{--                <small id="emailHelp" class="form-text text-muted">Enter the code to recover your password</small>--}}
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -86,7 +104,6 @@
     </div>
 </div>
 
-<!-- Go to Top -->
 <a class="js-go-to u-go-to" href="javascript:;"
    data-position='{"bottom": 15, "right": 15 }'
    data-type="fixed"

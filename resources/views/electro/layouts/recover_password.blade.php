@@ -9,14 +9,14 @@
 {{--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">--}}
 
 {{--</head>--}}
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Title -->
     <title>@yield('title')</title>
 
     <!-- Required Meta Tags Always Come First -->
-    <meta charset=83"utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
@@ -39,44 +39,45 @@
     <!-- CSS Electro Template -->
     <link rel="stylesheet" href="{{asset('assets/css/theme.css')}}">
 </head>
-
 <body style="display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;">
 
+@if (session('error'))
+
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{ session('error') }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+@endif
+@if (session('success'))
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ session('success') }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+@endif
+
 <div class="row">
     <div class="container">
 
-        <form action="{{route('auth.confirm')}}" method="post">
+        <form action="{{route('auth.confirm_recover')}}" method="POST">
             @method('POST')
             @csrf
 
-            @if (session('error'))
 
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong>{{ session('error') }}</strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            @endif
-            @if (session('success'))
-
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>{{ session('success') }}</strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            @endif
 
             <div class="form-group">
                 <label for="exampleInputEmail1">To the specified number {{$phone}}, a confirmation code was sent</label>
                 <input type="hidden" name="phone" value="{{$phone}}">
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                        name="confirm_code">
-                <small id="emailHelp" class="form-text text-muted">Enter the code for successful registration</small>
+                <small id="emailHelp" class="form-text text-muted">Enter the code to recover your password</small>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>

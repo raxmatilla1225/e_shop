@@ -25,11 +25,11 @@
                 <!-- Content -->
                 <div class="js-scrollbar u-sidebar__body">
                     <div class="u-sidebar__content u-header-sidebar__content">
-{{-------------------------------login-form-----------------------------}}
+                        {{-------------------------------login-form-----------------------------}}
                         <form class="js-validate" action="{{route('auth.login')}}" method="POST">
-                            @method('POST')
-                            @csrf
-                            <!-- Login -->
+                        @method('POST')
+                        @csrf
+                        <!-- Login -->
                             <div id="login" data-target-group="idForm">
                                 <!-- Title -->
                                 <header class="text-center mb-7">
@@ -125,16 +125,16 @@
                             </div>
 
                         </form>
-{{-------------------------------end-login-form-----------------------------}}
+                        {{-------------------------------end-login-form-----------------------------}}
 
-{{------------------------------------------------------------------------------------------------------------------------}}
+                        {{------------------------------------------------------------------------------------------------------------------------}}
 
-{{--------------------------------register-form-----------------------------}}
+                        {{--------------------------------register-form-----------------------------}}
                         <form class="js-validate" action="{{route('auth.register')}}" method="POST">
                         @method('POST')
                         @csrf
 
-                            <!-- Signup -->
+                        <!-- Signup -->
                             <div id="signup" style="display: none; opacity: 0;" data-target-group="idForm">
                                 <!-- Title -->
                                 <header class="text-center mb-7">
@@ -264,29 +264,38 @@
                             </div>
                             <!-- End Signup -->
 
-                            <!-- Forgot Password -->
-                            <div id="forgotPassword" style="display: none; opacity: 0;" data-target-group="idForm">
-                                <!-- Title -->
-                                <header class="text-center mb-7">
-                                    <h2 class="h4 mb-0">Recover Password.</h2>
-                                    <p>Enter your email address and an email with instructions will be sent to you.</p>
-                                </header>
-                                <!-- End Title -->
 
+                        </form>
+                        {{--------------------------------end-register-form-----------------------------}}
+
+
+                        {{--------------------------------recover-password-form-----------------------------}}
+
+                    <!-- Forgot Password -->
+                        <div id="forgotPassword" style="display: none; opacity: 0;" data-target-group="idForm">
+                            <!-- Title -->
+                            <header class="text-center mb-7">
+                                <h2 class="h4 mb-0">Recover Password.</h2>
+                                <p>Enter your email address and an email with instructions will be sent to you.</p>
+                            </header>
+                            <!-- End Title -->
+                            <form class="js-validate" action="{{route('auth.recover')}}" method="POST">
+                            @method('POST')
+                            @csrf
                                 <!-- Form Group -->
                                 <div class="form-group">
                                     <div class="js-form-message js-focus-state">
-                                        <label class="sr-only" for="recoverEmail">Your email</label>
+                                        <label class="sr-only" for="recoverEmail">Your phone number</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                         <span class="input-group-text" id="recoverEmailLabel">
-                                                            <span class="fas fa-user"></span>
+                                                            <span class="fas fa-phone"></span>
                                                         </span>
                                             </div>
-                                            <input type="email" class="form-control" name="email" id="recoverEmail"
-                                                   placeholder="Your email" aria-label="Your email"
+                                            <input type="tel" class="form-control" name="phone" id="recoverEmail"
+                                                   placeholder="Your phone" aria-label="Your phone"
                                                    aria-describedby="recoverEmailLabel" required
-                                                   data-msg="Please enter a valid email address."
+                                                   data-msg="Please enter your phone."
                                                    data-error-class="u-has-error"
                                                    data-success-class="u-has-success">
                                         </div>
@@ -299,19 +308,19 @@
                                         Recover Password
                                     </button>
                                 </div>
+                            </form>
 
-                                <div class="text-center mb-4">
-                                    <span class="small text-muted">Remember your password?</span>
-                                    <a class="js-animation-link small" href="javascript:;"
-                                       data-target="#login"
-                                       data-link-group="idForm"
-                                       data-animation-in="slideInUp">Login
-                                    </a>
-                                </div>
+                            <div class="text-center mb-4">
+                                <span class="small text-muted">Remember your password?</span>
+                                <a class="js-animation-link small" href="javascript:;"
+                                   data-target="#login"
+                                   data-link-group="idForm"
+                                   data-animation-in="slideInUp">Login
+                                </a>
                             </div>
-                            <!-- End Forgot Password -->
-                        </form>
-{{--------------------------------end-register-form-----------------------------}}
+                        </div>
+                        <!-- End Forgot Password -->
+                        {{-------------------------------end-recover-password-form-----------------------------}}
 
                     </div>
                 </div>
